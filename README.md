@@ -1,3 +1,2 @@
 # netfit
 AngelHack
-Hackathon
