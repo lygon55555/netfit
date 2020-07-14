@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78E2FE55E133A451139A6035 /* Pods_netfit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2C18BD37FBF102BCA95696 /* Pods_netfit.framework */; };
+		C70935F124BD521C005ACDD1 /* pilatesVideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = C70935F024BD521C005ACDD1 /* pilatesVideo.mov */; };
+		C70935F324BD7307005ACDD1 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935F224BD7307005ACDD1 /* CameraViewController.swift */; };
+		C70935F524BD7314005ACDD1 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935F424BD7314005ACDD1 /* VideoViewController.swift */; };
 		C723165124BCA6E400F30590 /* PoseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723165024BCA6E400F30590 /* PoseImageView.swift */; };
 		C7EC972224BC959700CEE2E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC972124BC959700CEE2E9 /* AppDelegate.swift */; };
 		C7EC972424BC959700CEE2E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC972324BC959700CEE2E9 /* SceneDelegate.swift */; };
@@ -31,6 +35,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2930FCA2F36D0BB24ECE9078 /* Pods-netfit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-netfit.release.xcconfig"; path = "Target Support Files/Pods-netfit/Pods-netfit.release.xcconfig"; sourceTree = "<group>"; };
+		3F2C18BD37FBF102BCA95696 /* Pods_netfit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_netfit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A19AA447464CB78DB00D3F8D /* Pods-netfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-netfit.debug.xcconfig"; path = "Target Support Files/Pods-netfit/Pods-netfit.debug.xcconfig"; sourceTree = "<group>"; };
+		C70935F024BD521C005ACDD1 /* pilatesVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = pilatesVideo.mov; sourceTree = "<group>"; };
+		C70935F224BD7307005ACDD1 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		C70935F424BD7314005ACDD1 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		C723165024BCA6E400F30590 /* PoseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseImageView.swift; sourceTree = "<group>"; };
 		C7EC971E24BC959700CEE2E9 /* netfit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = netfit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EC972124BC959700CEE2E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,16 +71,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E2FE55E133A451139A6035 /* Pods_netfit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F301D5BD0287BA8FCF3C2F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F2C18BD37FBF102BCA95696 /* Pods_netfit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C723164F24BCA6DA00F30590 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				C7EC972524BC959700CEE2E9 /* ViewController.swift */,
+				C70935F424BD7314005ACDD1 /* VideoViewController.swift */,
+				C70935F224BD7307005ACDD1 /* CameraViewController.swift */,
 				C723165024BCA6E400F30590 /* PoseImageView.swift */,
 			);
 			path = UI;
@@ -79,8 +100,11 @@
 		C7EC971524BC959700CEE2E9 = {
 			isa = PBXGroup;
 			children = (
+				C70935F024BD521C005ACDD1 /* pilatesVideo.mov */,
 				C7EC972024BC959700CEE2E9 /* netfit */,
 				C7EC971F24BC959700CEE2E9 /* Products */,
+				D52127ED470E45821FA06590 /* Pods */,
+				4F301D5BD0287BA8FCF3C2F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +176,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		D52127ED470E45821FA06590 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A19AA447464CB78DB00D3F8D /* Pods-netfit.debug.xcconfig */,
+				2930FCA2F36D0BB24ECE9078 /* Pods-netfit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7EC973224BC959900CEE2E9 /* Build configuration list for PBXNativeTarget "netfit" */;
 			buildPhases = (
+				67CB8D890EF37830F722FB39 /* [CP] Check Pods Manifest.lock */,
 				C7EC971A24BC959700CEE2E9 /* Sources */,
 				C7EC971B24BC959700CEE2E9 /* Frameworks */,
 				C7EC971C24BC959700CEE2E9 /* Resources */,
+				C05CF799C0C5CB197877865A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C70935F124BD521C005ACDD1 /* pilatesVideo.mov in Resources */,
 				C7EC972E24BC959900CEE2E9 /* LaunchScreen.storyboard in Resources */,
 				C7EC972B24BC959900CEE2E9 /* Assets.xcassets in Resources */,
 				C7EC972924BC959700CEE2E9 /* Main.storyboard in Resources */,
@@ -217,6 +253,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67CB8D890EF37830F722FB39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-netfit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C05CF799C0C5CB197877865A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-netfit/Pods-netfit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-netfit/Pods-netfit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-netfit/Pods-netfit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C7EC971A24BC959700CEE2E9 /* Sources */ = {
@@ -239,7 +317,9 @@
 				C7EC973724BC9C9F00CEE2E9 /* PoseBuilderConfiguration.swift in Sources */,
 				C7EC974624BC9DCD00CEE2E9 /* PoseNetOutput.swift in Sources */,
 				C7EC975424BC9ECF00CEE2E9 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
+				C70935F324BD7307005ACDD1 /* CameraViewController.swift in Sources */,
 				C7EC975024BC9EA800CEE2E9 /* CGImage+Extension.swift in Sources */,
+				C70935F524BD7314005ACDD1 /* VideoViewController.swift in Sources */,
 				C723165124BCA6E400F30590 /* PoseImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +462,7 @@
 		};
 		C7EC973324BC959900CEE2E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A19AA447464CB78DB00D3F8D /* Pods-netfit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -401,6 +482,7 @@
 		};
 		C7EC973424BC959900CEE2E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2930FCA2F36D0BB24ECE9078 /* Pods-netfit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
