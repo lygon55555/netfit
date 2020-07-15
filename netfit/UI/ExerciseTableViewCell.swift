@@ -16,4 +16,12 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet var exerciseTitle2Label: UILabel!
     @IBOutlet var exerciseTimeLabel: UILabel!
     @IBOutlet var exercisePlayButton: UIButton!
+    
+    override func awakeFromNib() {
+        let coverLayer = CALayer()
+        coverLayer.frame = self.exerciseImageView.bounds;
+        coverLayer.backgroundColor = UIColor.black.cgColor
+        coverLayer.opacity = 0.6
+        self.exerciseImageView.layer.addSublayer(coverLayer)
+    }
 }

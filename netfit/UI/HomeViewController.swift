@@ -36,10 +36,9 @@ class HomeViewController: UIViewController {
         weekView.layer.addBorder(edge: UIRectEdge.top, color: UIColor.init(red: 114/255, green: 163/255, blue: 253/255, alpha: 1), thickness: 1)
         weekView.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.init(red: 114/255, green: 163/255, blue: 253/255, alpha: 1), thickness: 1)
     }
-    
-    
 }
 
+// MARK: - Influencer Collection View
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -53,10 +52,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.size.width / 2
         return cell
     }
-    
-
 }
 
+// MARK: - Exercise Table View
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -68,14 +66,27 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.exerciseImageView.layer.cornerRadius = 13
         cell.exerciseTitle1View.layer.cornerRadius = 10
         
+//        let coverLayer = CALayer()
+//        coverLayer.frame = cell.exerciseImageView.bounds;
+//        coverLayer.backgroundColor = UIColor.black.cgColor
+//        coverLayer.opacity = 0.6
+//        cell.exerciseImageView.layer.addSublayer(coverLayer)
+
+        
         return cell
     }
+
     
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "Section \(section)"
-        return "힙업 운동"
-    }
+    
+    
+    
+    
+    // custom section header
+    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "힙업 운동"
+//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let vw = UIView()
@@ -87,8 +98,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
-    
-    
     
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        let headerView = UIView.init(frame: CGRect.init(x: 100, y: 0, width: tableView.frame.width, height: 50))
@@ -110,9 +119,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 extension CALayer {
-
   func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
-
     let border = CALayer()
 
     switch edge {
