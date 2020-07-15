@@ -11,7 +11,13 @@
 		C70935F124BD521C005ACDD1 /* pilatesVideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = C70935F024BD521C005ACDD1 /* pilatesVideo.mov */; };
 		C70935F324BD7307005ACDD1 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935F224BD7307005ACDD1 /* CameraViewController.swift */; };
 		C70935F524BD7314005ACDD1 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935F424BD7314005ACDD1 /* VideoViewController.swift */; };
+		C70935F924BD9630005ACDD1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935F824BD9630005ACDD1 /* ShadowView.swift */; };
+		C70935FB24BD9C0D005ACDD1 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935FA24BD9C0D005ACDD1 /* TempViewController.swift */; };
 		C723165124BCA6E400F30590 /* PoseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723165024BCA6E400F30590 /* PoseImageView.swift */; };
+		C78AA46624BE061E0067AFDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AA46524BE061E0067AFDC /* HomeViewController.swift */; };
+		C78AA46824BE8F7C0067AFDC /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AA46724BE8F7C0067AFDC /* StoryCollectionViewCell.swift */; };
+		C78AA46A24BE8FC00067AFDC /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AA46924BE8FC00067AFDC /* ExerciseTableViewCell.swift */; };
+		C7B6ADDE24BF026D00E1A205 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B6ADDD24BF026D00E1A205 /* MainTabBarController.swift */; };
 		C7EC972224BC959700CEE2E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC972124BC959700CEE2E9 /* AppDelegate.swift */; };
 		C7EC972424BC959700CEE2E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC972324BC959700CEE2E9 /* SceneDelegate.swift */; };
 		C7EC972624BC959700CEE2E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC972524BC959700CEE2E9 /* ViewController.swift */; };
@@ -41,7 +47,13 @@
 		C70935F024BD521C005ACDD1 /* pilatesVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = pilatesVideo.mov; sourceTree = "<group>"; };
 		C70935F224BD7307005ACDD1 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		C70935F424BD7314005ACDD1 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		C70935F824BD9630005ACDD1 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		C70935FA24BD9C0D005ACDD1 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		C723165024BCA6E400F30590 /* PoseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseImageView.swift; sourceTree = "<group>"; };
+		C78AA46524BE061E0067AFDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C78AA46724BE8F7C0067AFDC /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		C78AA46924BE8FC00067AFDC /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		C7B6ADDD24BF026D00E1A205 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C7EC971E24BC959700CEE2E9 /* netfit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = netfit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EC972124BC959700CEE2E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7EC972324BC959700CEE2E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				C7EC972524BC959700CEE2E9 /* ViewController.swift */,
+				C78AA46524BE061E0067AFDC /* HomeViewController.swift */,
+				C7B6ADDD24BF026D00E1A205 /* MainTabBarController.swift */,
+				C78AA46724BE8F7C0067AFDC /* StoryCollectionViewCell.swift */,
+				C78AA46924BE8FC00067AFDC /* ExerciseTableViewCell.swift */,
+				C70935FA24BD9C0D005ACDD1 /* TempViewController.swift */,
 				C70935F424BD7314005ACDD1 /* VideoViewController.swift */,
 				C70935F224BD7307005ACDD1 /* CameraViewController.swift */,
 				C723165024BCA6E400F30590 /* PoseImageView.swift */,
@@ -172,6 +189,7 @@
 			children = (
 				C7EC975124BC9EBA00CEE2E9 /* VideoCapture.swift */,
 				C7EC975324BC9ECF00CEE2E9 /* AVCaptureVideoOrientation+Extension.swift */,
+				C70935F824BD9630005ACDD1 /* ShadowView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -307,6 +325,9 @@
 				C7EC974124BC9D4A00CEE2E9 /* Joint.swift in Sources */,
 				C7EC974E24BC9E9500CEE2E9 /* CGPoint+Extension.swift in Sources */,
 				C7EC972624BC959700CEE2E9 /* ViewController.swift in Sources */,
+				C7B6ADDE24BF026D00E1A205 /* MainTabBarController.swift in Sources */,
+				C78AA46624BE061E0067AFDC /* HomeViewController.swift in Sources */,
+				C70935F924BD9630005ACDD1 /* ShadowView.swift in Sources */,
 				C7EC972224BC959700CEE2E9 /* AppDelegate.swift in Sources */,
 				C7EC973F24BC9D3D00CEE2E9 /* Pose.swift in Sources */,
 				C7EC975224BC9EBA00CEE2E9 /* VideoCapture.swift in Sources */,
@@ -315,9 +336,12 @@
 				C7EC974424BC9DB000CEE2E9 /* PoseNetInput.swift in Sources */,
 				C7EC972424BC959700CEE2E9 /* SceneDelegate.swift in Sources */,
 				C7EC973724BC9C9F00CEE2E9 /* PoseBuilderConfiguration.swift in Sources */,
+				C78AA46824BE8F7C0067AFDC /* StoryCollectionViewCell.swift in Sources */,
 				C7EC974624BC9DCD00CEE2E9 /* PoseNetOutput.swift in Sources */,
+				C70935FB24BD9C0D005ACDD1 /* TempViewController.swift in Sources */,
 				C7EC975424BC9ECF00CEE2E9 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
 				C70935F324BD7307005ACDD1 /* CameraViewController.swift in Sources */,
+				C78AA46A24BE8FC00067AFDC /* ExerciseTableViewCell.swift in Sources */,
 				C7EC975024BC9EA800CEE2E9 /* CGImage+Extension.swift in Sources */,
 				C70935F524BD7314005ACDD1 /* VideoViewController.swift in Sources */,
 				C723165124BCA6E400F30590 /* PoseImageView.swift in Sources */,
