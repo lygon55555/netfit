@@ -92,11 +92,9 @@ class VideoCapture: NSObject {
         }
 
         captureSession.beginConfiguration()
-
         captureSession.sessionPreset = .vga640x480
 
         try setCaptureSessionInput()
-
         try setCaptureSessionOutput()
 
         captureSession.commitConfiguration()
