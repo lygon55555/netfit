@@ -14,6 +14,7 @@
 		C70935F924BD9630005ACDD1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935F824BD9630005ACDD1 /* ShadowView.swift */; };
 		C70935FB24BD9C0D005ACDD1 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935FA24BD9C0D005ACDD1 /* TempViewController.swift */; };
 		C723165124BCA6E400F30590 /* PoseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723165024BCA6E400F30590 /* PoseImageView.swift */; };
+		C729060024C0753E00E0DBFE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72905FF24C0753E00E0DBFE /* SearchViewController.swift */; };
 		C7609D6B24BFEE9300D2D787 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7609D6A24BFEE9300D2D787 /* ExerciseListViewController.swift */; };
 		C7609D6D24BFF5A200D2D787 /* ExerciseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7609D6C24BFF5A200D2D787 /* ExerciseListTableViewCell.swift */; };
 		C78AA46624BE061E0067AFDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AA46524BE061E0067AFDC /* HomeViewController.swift */; };
@@ -53,6 +54,7 @@
 		C70935F824BD9630005ACDD1 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		C70935FA24BD9C0D005ACDD1 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		C723165024BCA6E400F30590 /* PoseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseImageView.swift; sourceTree = "<group>"; };
+		C72905FF24C0753E00E0DBFE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C7609D6A24BFEE9300D2D787 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 		C7609D6C24BFF5A200D2D787 /* ExerciseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewCell.swift; sourceTree = "<group>"; };
 		C78AA46524BE061E0067AFDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				C7609D6A24BFEE9300D2D787 /* ExerciseListViewController.swift */,
 				C7609D6C24BFF5A200D2D787 /* ExerciseListTableViewCell.swift */,
 				C78AA46724BE8F7C0067AFDC /* StoryCollectionViewCell.swift */,
+				C72905FF24C0753E00E0DBFE /* SearchViewController.swift */,
 				C70935FA24BD9C0D005ACDD1 /* TempViewController.swift */,
 				C70935F424BD7314005ACDD1 /* VideoViewController.swift */,
 				C70935F224BD7307005ACDD1 /* CameraViewController.swift */,
@@ -328,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C729060024C0753E00E0DBFE /* SearchViewController.swift in Sources */,
 				C7EC974A24BC9E0900CEE2E9 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
 				C7EC973D24BC9D2500CEE2E9 /* PoseBuilder+Multiple.swift in Sources */,
 				C7EC973B24BC9D0200CEE2E9 /* PoseBuilder+Single.swift in Sources */,
