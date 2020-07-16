@@ -11,12 +11,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet var gradientView: UIView!
+    @IBOutlet var topView: UIView!
     @IBOutlet var influencerCollectionView: UICollectionView!
     @IBOutlet var exerciseTableView: UITableView!
     @IBOutlet var myInfoView: ShadowView!
     @IBOutlet var weekView: UIView!
     
-    var storyNames: [String] = ["김수연", "임다솜", "김용현"]
+    var storyNames: [String] = ["김수연", "원다솜", "김용현"]
 
     override func viewDidLoad() {
         influencerCollectionView.delegate = self
@@ -31,11 +33,54 @@ class HomeViewController: UIViewController {
         homeViewDesign()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+        
     func homeViewDesign() {
         myInfoView.layer.cornerRadius = 15
         weekView.layer.addBorder(edge: UIRectEdge.top, color: UIColor.init(red: 114/255, green: 163/255, blue: 253/255, alpha: 1), thickness: 1)
         weekView.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.init(red: 114/255, green: 163/255, blue: 253/255, alpha: 1), thickness: 1)
+        
+        let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 65, height: 30))
+        let titleView: UIView = UIView.init(frame: rect)
+
+        let titleImage = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 65, height: 24))
+        titleImage.image = UIImage(named: "netfitLogo")
+        titleImage.contentMode = .scaleAspectFit
+        titleView.addSubview(titleImage)
+
+        self.navigationItem.titleView = titleView
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.gradientView.bounds
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        gradientLayer.colors = [
+            UIColor(red: 105/255, green: 145/255, blue: 239/255, alpha: 1).cgColor,
+            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
+        ]
+        gradientLayer.locations = [0, 0.6]
+        gradientView.layer.addSublayer(gradientLayer)
+        
+        
+        
+        self.exerciseTableView.setValue(UIColor.white , forKey: "tableHeaderBackgroundColor")
+
     }
+    
+    func generateRandomColor() -> UIColor {
+        let hue : CGFloat = CGFloat(arc4random() % 256) / 256 + 0.5
+        let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5
+        let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 0.5)
+    }
+    
+    
+    
+    
+    
+    
 }
 
 // MARK: - Influencer Collection View
@@ -50,7 +95,29 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.profileName.text = storyNames[indexPath.row % 3]
         cell.profileImageView.image = UIImage(named: "img1")
         cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.size.width / 2
+        
+        if cell.isSelected {
+            cell.profileImageView.layer.borderWidth = 2
+            cell.profileImageView.layer.borderColor = UIColor.init(red: 121/255, green: 170/255, blue: 255/255, alpha: 1).cgColor
+        }
+        else {
+            cell.profileImageView.layer.borderWidth = 0
+            cell.profileImageView.layer.borderColor = UIColor.clear.cgColor
+        }
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerCollectionViewCell
+        cell.profileImageView.layer.borderWidth = 0
+        cell.profileImageView.layer.borderColor = UIColor.clear.cgColor
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerCollectionViewCell
+        cell.profileImageView.layer.borderWidth = 3
+        cell.profileImageView.layer.borderColor = UIColor.init(red: 121/255, green: 170/255, blue: 255/255, alpha: 1).cgColor
     }
 }
 
@@ -65,56 +132,120 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.exerciseImageView.image = UIImage(named: "img2")
         cell.exerciseImageView.layer.cornerRadius = 13
         cell.exerciseTitle1View.layer.cornerRadius = 10
-        
-//        let coverLayer = CALayer()
-//        coverLayer.frame = cell.exerciseImageView.bounds;
-//        coverLayer.backgroundColor = UIColor.black.cgColor
-//        coverLayer.opacity = 0.6
-//        cell.exerciseImageView.layer.addSublayer(coverLayer)
-
+        cell.selectionStyle = .none
         
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
+        cell.exerciseImageView.layer.sublayers?[0].backgroundColor = UIColor.white.cgColor
+        cell.exerciseImageView.layer.sublayers?[0].opacity = 0.54
+        
+        let coverLayer = CALayer()
+        coverLayer.frame = cell.exerciseTitle1View.bounds;
+        coverLayer.backgroundColor = UIColor.white.cgColor
+        coverLayer.opacity = 0.54
+        cell.exerciseTitle1View.layer.addSublayer(coverLayer)
+    }
 
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
+        cell.exerciseImageView.layer.sublayers?[0].backgroundColor = UIColor.black.cgColor
+        cell.exerciseImageView.layer.sublayers?[0].opacity = 0.6
+        
+        cell.exerciseTitle1View.layer.sublayers?[1].removeFromSuperlayer()
+    }
     
-    
-    
-    
-    
-    
-    // custom section header
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "힙업 운동"
-//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let vw = UIView()
-        vw.backgroundColor = .clear
-
-        return vw
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        let label = UILabel()
+        label.text = "힙업 운동"
+        label.frame = CGRect(x: 30, y: 5, width: 100, height: 35)
+        label.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.heavy)
+        view.addSubview(label)
+        return view
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 40
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView.init(frame: CGRect.init(x: 100, y: 0, width: tableView.frame.width, height: 50))
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    func tableView(_ tableView: UITableView, willDisplayHeaderView view:
+//    UIView, forSection section: Int) {
 //
-//        let label = UILabel()
-//        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
-//        label.text = "힙업 운동"
+//        switch section {
+//        case 0:
+//            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn, .curveEaseOut, .allowUserInteraction], animations: {() -> Void in
+//                self.exerciseTableView.backgroundColor = UIColor.cyan.withAlphaComponent(0.4)
 //
-//        headerView.addSubview(label)
+//            })
 //
-//        return headerView
-//    }
+//        case 1:
+//            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn, .curveEaseOut, .allowUserInteraction], animations: {() -> Void in
+//                self.exerciseTableView.backgroundColor = UIColor.green.withAlphaComponent(0.4)
 //
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 50
+//            })
+//
+//        case 2:
+//            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn, .curveEaseOut, .allowUserInteraction], animations: {() -> Void in
+//                self.exerciseTableView.backgroundColor = UIColor.yellow.withAlphaComponent(0.4)
+//
+//            })
+//
+//        case 3:
+//            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn, .curveEaseOut, .allowUserInteraction], animations: {() -> Void in
+//                self.exerciseTableView.backgroundColor = UIColor.orange.withAlphaComponent(0.4)
+//
+//            })
+//
+//        case 4:
+//            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn, .curveEaseOut, .allowUserInteraction], animations: {() -> Void in
+//                self.exerciseTableView.backgroundColor = UIColor.magenta.withAlphaComponent(0.4)
+//
+//            })
+//
+//        default:
+//            self.exerciseTableView.backgroundColor = UIColor.brown
+//        }
 //    }
     
+    
+    
+    
+    
+//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//        for layer in self.view.layer.sublayers! {
+//            if layer .isKind(of: CAGradientLayer.self) {
+//                layer.removeFromSuperlayer()
+//            }
+//        }
+//        let gradient = CAGradientLayer()
+//        gradient.frame = self.view.bounds
+//        gradient.colors = [self.generateRandomColor().cgColor, self.generateRandomColor().cgColor]
+//        let anim:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
+//        anim.fromValue = 0.5
+//        anim.toValue = 1
+//        anim.duration = 1.0
+//        gradient.add(anim, forKey: "opacity")
+//        self.view.layer.addSublayer(gradient)
+//        self.view.layoutIfNeeded()
+//    }
 }
 
 
