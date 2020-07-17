@@ -13,7 +13,6 @@
 		C70935F524BD7314005ACDD1 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935F424BD7314005ACDD1 /* VideoViewController.swift */; };
 		C70935F924BD9630005ACDD1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935F824BD9630005ACDD1 /* ShadowView.swift */; };
 		C70935FB24BD9C0D005ACDD1 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70935FA24BD9C0D005ACDD1 /* TempViewController.swift */; };
-		C71615FA24C198BD003756EB /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71615F924C198BD003756EB /* Gesture.swift */; };
 		C723165124BCA6E400F30590 /* PoseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723165024BCA6E400F30590 /* PoseImageView.swift */; };
 		C729060024C0753E00E0DBFE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72905FF24C0753E00E0DBFE /* SearchViewController.swift */; };
 		C729060424C13AE700E0DBFE /* MyClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C729060324C13AE700E0DBFE /* MyClassViewController.swift */; };
@@ -59,7 +58,6 @@
 		C70935F424BD7314005ACDD1 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		C70935F824BD9630005ACDD1 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		C70935FA24BD9C0D005ACDD1 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
-		C71615F924C198BD003756EB /* Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
 		C723165024BCA6E400F30590 /* PoseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseImageView.swift; sourceTree = "<group>"; };
 		C72905FF24C0753E00E0DBFE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C729060324C13AE700E0DBFE /* MyClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				C72905FF24C0753E00E0DBFE /* SearchViewController.swift */,
 				C737996D24C188740017EE2F /* MyClass */,
 				C70935FA24BD9C0D005ACDD1 /* TempViewController.swift */,
-				C71615F924C198BD003756EB /* Gesture.swift */,
 				C70935F424BD7314005ACDD1 /* VideoViewController.swift */,
 				C70935F224BD7307005ACDD1 /* CameraViewController.swift */,
 				C723165024BCA6E400F30590 /* PoseImageView.swift */,
@@ -384,7 +381,6 @@
 				C729060024C0753E00E0DBFE /* SearchViewController.swift in Sources */,
 				C7EC974A24BC9E0900CEE2E9 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
 				C7EC973D24BC9D2500CEE2E9 /* PoseBuilder+Multiple.swift in Sources */,
-				C71615FA24C198BD003756EB /* Gesture.swift in Sources */,
 				C7EC973B24BC9D0200CEE2E9 /* PoseBuilder+Single.swift in Sources */,
 				C7EC974124BC9D4A00CEE2E9 /* Joint.swift in Sources */,
 				C7EC974E24BC9E9500CEE2E9 /* CGPoint+Extension.swift in Sources */,
