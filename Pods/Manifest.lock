@@ -1,20 +1,24 @@
 PODS:
+  - Player (0.13.2)
   - SplitKit (1.0.2)
   - VersaPlayer (3.0.2)
 
 DEPENDENCIES:
+  - Player (~> 0.13.2)
   - SplitKit
   - VersaPlayer
 
 SPEC REPOS:
   trunk:
+    - Player
     - SplitKit
     - VersaPlayer
 
 SPEC CHECKSUMS:
+  Player: 7a2bcad3631034fa47d4b6fdedf7c4075fc236fe
   SplitKit: a7de0577a6528152cd41bc0667ccc78a33abe6e8
   VersaPlayer: 0e9a0ea7da786729ffb377dbd17b34641a8265e4
 
-PODFILE CHECKSUM: bd1f7a1c41efbcb2122c4a855a1d7985d21b3ebf
+PODFILE CHECKSUM: 787a7713558608e01541eeb30e9497c244ea2e47
 
 COCOAPODS: 1.9.0

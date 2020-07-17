@@ -7,6 +7,7 @@ target 'netfit' do
 
 	pod 'SplitKit'
 	pod 'VersaPlayer'
+	pod "Player", "~> 0.13.2"
 
   # Pods for netfit
 

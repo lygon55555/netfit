@@ -7,49 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0673EB55F380658627A9E91E66A97EAC /* VersaTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B86299F054F39495B61B10B40218A /* VersaTimeLabel.swift */; };
-		07D49018345BBDFDACA52B677FD6DC1D /* Snapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E570F4F7C3850B252163A05FE59EB1F /* Snapped.swift */; };
-		26446E908FD7C0E1B7660586D0E64D1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		3796FC79EBACEB999536F791133942D6 /* Pods-netfit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6438DAF08B418BAEAA873B2177C9A2F /* Pods-netfit-dummy.m */; };
-		37AB7673B2F8A11E1F0A2A54B909FE14 /* VersaPlayerControlsBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F3063CFBF762C966E6211D918A69A /* VersaPlayerControlsBehaviour.swift */; };
-		44BF7F038424284C4CE61B4DEA445520 /* VersaPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B459AB886CBDD2E04D826B9859DDA /* VersaPlayerItem.swift */; };
-		4613503D11CD12B5EC3C65344F3BA958 /* HandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D3910EC3EBFCD870F842979046EF81 /* HandleView.swift */; };
-		4BFD4B2FBC3E62DC34C5FF25B7ED6E90 /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC053162BBB3AC902D9BDA5565FCBBC /* InstantPanGestureRecognizer.swift */; };
-		5DE87FD811E42DA365121DDF74554236 /* VersaPlayerControlsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7122638CB5C6F02452D77289C08204 /* VersaPlayerControlsCoordinator.swift */; };
-		61287756EFBA2996D3260030B1BAF688 /* VersaPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AE25554C1A45D20EB30350F7F22285 /* VersaPlayerView.swift */; };
-		643129E5EE0A36A11A0E3F910E7380B9 /* VersaPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3001AF2250B79FFAC141DBAD99682C /* VersaPlayerExtension.swift */; };
-		6D5E68B1D3F98AC02B29048E9C2F0A4B /* VersaPlayerGestureRecieverViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFEBF0843DC528EFD2B02AE517F8118 /* VersaPlayerGestureRecieverViewDelegate.swift */; };
-		7772293C6E437E5FE57F4BB6C3E8E94B /* VersaSeekbarSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E615E73BA2515061875F7BBC8E3D9523 /* VersaSeekbarSlider.swift */; };
-		7A68231138CC6232F0E09F4EC224E441 /* VersaPlayerPlaybackError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E8881054A53F3B8C31819028A464FC /* VersaPlayerPlaybackError.swift */; };
-		7AEA1FF7F4FEA1642E92E4DF99505FAE /* VersaPlayerPlaybackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74201C7E929A128226B7AA59C364658C /* VersaPlayerPlaybackDelegate.swift */; };
+		0673EB55F380658627A9E91E66A97EAC /* VersaTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B7B91EC98A64FEE13104A27CD938CA /* VersaTimeLabel.swift */; };
+		07D49018345BBDFDACA52B677FD6DC1D /* Snapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BA71F292BCE39884FF5BEB5F7916E /* Snapped.swift */; };
+		18E5A6107749831708601D49ACCE7186 /* Player-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 140D721AAB1074920CA216EC97039DA7 /* Player-dummy.m */; };
+		294F0ACFACC74E2153C08A72CB6306DA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AEB77F6ECB4B7A2E6A2E79D88BADB8 /* Player.swift */; };
+		37AB7673B2F8A11E1F0A2A54B909FE14 /* VersaPlayerControlsBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD459DEF715643B54ABD780CEA28D8 /* VersaPlayerControlsBehaviour.swift */; };
+		44BF7F038424284C4CE61B4DEA445520 /* VersaPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014D379D69721CFA036627E42E293F1 /* VersaPlayerItem.swift */; };
+		4613503D11CD12B5EC3C65344F3BA958 /* HandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12687079B388BE7CB4B8605334405117 /* HandleView.swift */; };
+		4BFD4B2FBC3E62DC34C5FF25B7ED6E90 /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D62D3057901449BA37E8AA0A32C495A /* InstantPanGestureRecognizer.swift */; };
+		5DE87FD811E42DA365121DDF74554236 /* VersaPlayerControlsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377341877A057E663596159FA09F4ED2 /* VersaPlayerControlsCoordinator.swift */; };
+		5E4FE3381AB7C15DCE055A98BBD1815F /* Pods-netfit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 375FC70DCEA329B64A628E909635913B /* Pods-netfit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61287756EFBA2996D3260030B1BAF688 /* VersaPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF37C5B656D221D7E45CB9E4AF05A46 /* VersaPlayerView.swift */; };
+		643129E5EE0A36A11A0E3F910E7380B9 /* VersaPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB88B69953EBD8E9481D9AAB82E18419 /* VersaPlayerExtension.swift */; };
+		6D5E68B1D3F98AC02B29048E9C2F0A4B /* VersaPlayerGestureRecieverViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B34E28E18FF6CF2732D40BA7872AA /* VersaPlayerGestureRecieverViewDelegate.swift */; };
+		7772293C6E437E5FE57F4BB6C3E8E94B /* VersaSeekbarSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F87DB8C1BD1454A066812E70708AA6 /* VersaSeekbarSlider.swift */; };
+		7A68231138CC6232F0E09F4EC224E441 /* VersaPlayerPlaybackError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42598CE0B50907FBD994830BA3C3292 /* VersaPlayerPlaybackError.swift */; };
+		7AEA1FF7F4FEA1642E92E4DF99505FAE /* VersaPlayerPlaybackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7E985DEE34470F0D69D53CA00133A8 /* VersaPlayerPlaybackDelegate.swift */; };
 		89670A1F853F3C8789CF94583A5C705A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		89D39450A27C0FE7899B8CEC12CCB3C5 /* VersaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF84B63B302C0DDFF8FB4E2721AE4BE /* VersaPlayer.swift */; };
-		8D0E2122D9A9226EB01FBDE7C8BF513D /* VersaPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63F396E14A3EFAC52961AE449EE34181 /* VersaPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		904185BE0457AAC8CCE864D37560D94E /* VersaPlayerMediaTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA40197D990BC3FBC3C0E8B7DFC9C3AD /* VersaPlayerMediaTrack.swift */; };
-		963B24C5EE6EFE98575855B8447B1B98 /* VersaPlayerCaptionStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A22D42C7698B868526A803FCB2672D /* VersaPlayerCaptionStyling.swift */; };
-		A090C3C3BD40DA2A5AF65C08127AE1DF /* SplitKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D90AA604A5E534E1A54297F89A44E /* SplitKit-dummy.m */; };
-		A3BA16D451AB5E3C10150AE5ADC475BD /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917D96DA8CA5C6F959FCE3F84B3083F3 /* SplitViewController.swift */; };
-		AE7E0F4C2948652789BB827601F485E3 /* Pods-netfit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 375FC70DCEA329B64A628E909635913B /* Pods-netfit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89D39450A27C0FE7899B8CEC12CCB3C5 /* VersaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FADD27FCAC5A222DC80059B5387470 /* VersaPlayer.swift */; };
+		8D0E2122D9A9226EB01FBDE7C8BF513D /* VersaPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F56D0ADF03E857404653D6CE58CD8B70 /* VersaPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		904185BE0457AAC8CCE864D37560D94E /* VersaPlayerMediaTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CDDF8F014D0322AA9D9916FF689944 /* VersaPlayerMediaTrack.swift */; };
+		963B24C5EE6EFE98575855B8447B1B98 /* VersaPlayerCaptionStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A5B1ADCB831157B30156041FF05EC /* VersaPlayerCaptionStyling.swift */; };
+		A090C3C3BD40DA2A5AF65C08127AE1DF /* SplitKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22897D5B5E217CF95EAA18F417A51D4E /* SplitKit-dummy.m */; };
+		A3BA16D451AB5E3C10150AE5ADC475BD /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805EB8F8ED5A9B6818691844F9A104B /* SplitViewController.swift */; };
+		A57C9C5AA262C7D40CB2B2E3B3E6986E /* Pods-netfit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6438DAF08B418BAEAA873B2177C9A2F /* Pods-netfit-dummy.m */; };
 		B470C50659E4DEFBA7B53C6082267FA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		B7373E6AD247D12FAEBFE7FF17903998 /* VersaPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7908DE6FB6F9B8745DC8546CDEE5A /* VersaPlayer-dummy.m */; };
-		C11451B3D376298E7566539C19666E07 /* VersaPlayerGestureRecieverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BBD453EA8A9C657E4E641C8C2824EA /* VersaPlayerGestureRecieverView.swift */; };
-		C1E05CE56EBB697A16BF0131A9BB0938 /* SplitKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22107D7BE7E6CBBF88AB6B998CE6670E /* SplitKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB82B3426A8520371E57B957E113474E /* VersaPlayerDecryptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44464E38645FBCB6107CBC5C86642675 /* VersaPlayerDecryptionDelegate.swift */; };
-		E1C734D6207B3AE97DA623C1B2B1FDEE /* VersaStatefulButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293E06238D6D061BA434C0D1503C685C /* VersaStatefulButton.swift */; };
-		E59D916E82BD55AFD91A7AB704A3EE45 /* VersaPlayerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF4CE13F1C5DECCE05FE403DBBC92A /* VersaPlayerControls.swift */; };
-		E87BEEB1FE607D5772E4E57EC54A54E7 /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E6C13B65A40FF1D47094B0E5D97F62 /* Arrangement.swift */; };
-		FF520F6A7D92410E58C90555D1D20C13 /* VersaPlayerRenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D691C0DA688B4BB1EAFD34CA56BABDE /* VersaPlayerRenderingView.swift */; };
+		B7373E6AD247D12FAEBFE7FF17903998 /* VersaPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 936E692542F4EFB848820C5B31F8C668 /* VersaPlayer-dummy.m */; };
+		C11451B3D376298E7566539C19666E07 /* VersaPlayerGestureRecieverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088F22C7981A9A3BB58A6BAB98A3643 /* VersaPlayerGestureRecieverView.swift */; };
+		C1E05CE56EBB697A16BF0131A9BB0938 /* SplitKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6E7E5818E5253C33B887BD10D98C6C6 /* SplitKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7E85F3CC8531097F73467DB96D2C017 /* Player-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A926DB8818E557C498183BED337FC0 /* Player-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB82B3426A8520371E57B957E113474E /* VersaPlayerDecryptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7253BE5691F3F2EC1B3D4490753F599B /* VersaPlayerDecryptionDelegate.swift */; };
+		E1A81E2E1F1B7628DC76CD91B9462458 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		E1C734D6207B3AE97DA623C1B2B1FDEE /* VersaStatefulButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06DD616F2C413296354AC06A255875D /* VersaStatefulButton.swift */; };
+		E59D916E82BD55AFD91A7AB704A3EE45 /* VersaPlayerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9376BFCCE932196B014437844E3C3AB6 /* VersaPlayerControls.swift */; };
+		E87BEEB1FE607D5772E4E57EC54A54E7 /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE44F48ECF13A86C00EDA3722F3B3E02 /* Arrangement.swift */; };
+		ED7A1057846247AA88EB8957FB6EE3B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		FF520F6A7D92410E58C90555D1D20C13 /* VersaPlayerRenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C851C968349E032F4ABA669A37D48 /* VersaPlayerRenderingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A9EBD706801F9CF26C80D23DCC15F31 /* PBXContainerItemProxy */ = {
+		03BD118342357546814C65ADB4A5CB24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3566CE7721250363BAE931141A0703B1;
+			remoteInfo = Player;
+		};
+		42508A013C397F060E99D09B8DFD9DA4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9C10FCC9230D7F2B427D6CDB50584B25;
 			remoteInfo = VersaPlayer;
 		};
-		AF8D3297A12396D69CD5E734F7D1B2FE /* PBXContainerItemProxy */ = {
+		F8AA44530D24F1EAFF3AB8C363E4E737 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -59,56 +70,65 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0442A68E0E509D155D85E6438B988707 /* VersaPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = VersaPlayer.modulemap; sourceTree = "<group>"; };
-		04B7908DE6FB6F9B8745DC8546CDEE5A /* VersaPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VersaPlayer-dummy.m"; sourceTree = "<group>"; };
-		06A22D42C7698B868526A803FCB2672D /* VersaPlayerCaptionStyling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerCaptionStyling.swift; path = VersaPlayer/Classes/Source/Core/Player/VersaPlayerCaptionStyling.swift; sourceTree = "<group>"; };
+		00B7B91EC98A64FEE13104A27CD938CA /* VersaTimeLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaTimeLabel.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Controls/VersaTimeLabel.swift; sourceTree = "<group>"; };
+		04DC1BA32B69D5026EC500F3EC5DEAF9 /* VersaPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VersaPlayer-prefix.pch"; sourceTree = "<group>"; };
 		08E5CCB1B0F9B96904F94D2A4DBE9F6C /* Pods-netfit-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-netfit-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0E570F4F7C3850B252163A05FE59EB1F /* Snapped.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Snapped.swift; path = SplitKit/Snapped.swift; sourceTree = "<group>"; };
+		12687079B388BE7CB4B8605334405117 /* HandleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HandleView.swift; path = SplitKit/HandleView.swift; sourceTree = "<group>"; };
+		140D721AAB1074920CA216EC97039DA7 /* Player-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Player-dummy.m"; sourceTree = "<group>"; };
+		193A5B1ADCB831157B30156041FF05EC /* VersaPlayerCaptionStyling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerCaptionStyling.swift; path = VersaPlayer/Classes/Source/Core/Player/VersaPlayerCaptionStyling.swift; sourceTree = "<group>"; };
 		1FFB2E8D0126ED23C37E50ED8DEF3806 /* Pods-netfit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-netfit.modulemap"; sourceTree = "<group>"; };
-		20BBD453EA8A9C657E4E641C8C2824EA /* VersaPlayerGestureRecieverView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerGestureRecieverView.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Core/VersaPlayerGestureRecieverView.swift; sourceTree = "<group>"; };
-		21513DEE93ED9BE689EED3DDB197F57B /* VersaPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VersaPlayer-prefix.pch"; sourceTree = "<group>"; };
-		22107D7BE7E6CBBF88AB6B998CE6670E /* SplitKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SplitKit-umbrella.h"; sourceTree = "<group>"; };
-		293E06238D6D061BA434C0D1503C685C /* VersaStatefulButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaStatefulButton.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Controls/VersaStatefulButton.swift; sourceTree = "<group>"; };
-		2A7B459AB886CBDD2E04D826B9859DDA /* VersaPlayerItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerItem.swift; path = VersaPlayer/Classes/Source/Core/Player/VersaPlayerItem.swift; sourceTree = "<group>"; };
+		2219BB798FFF4B15492CF3A1CDD9E1A7 /* Player.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Player.release.xcconfig; sourceTree = "<group>"; };
+		22897D5B5E217CF95EAA18F417A51D4E /* SplitKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SplitKit-dummy.m"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		348C8A781773C7FED45FC682C381D7FC /* VersaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VersaPlayer.release.xcconfig; sourceTree = "<group>"; };
-		34D3910EC3EBFCD870F842979046EF81 /* HandleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HandleView.swift; path = SplitKit/HandleView.swift; sourceTree = "<group>"; };
 		375FC70DCEA329B64A628E909635913B /* Pods-netfit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-netfit-umbrella.h"; sourceTree = "<group>"; };
-		44464E38645FBCB6107CBC5C86642675 /* VersaPlayerDecryptionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerDecryptionDelegate.swift; path = VersaPlayer/Classes/Source/Core/Protocols/VersaPlayerDecryptionDelegate.swift; sourceTree = "<group>"; };
+		377341877A057E663596159FA09F4ED2 /* VersaPlayerControlsCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerControlsCoordinator.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/VersaPlayerControlsCoordinator.swift; sourceTree = "<group>"; };
+		377709A812D2C555F0888AACAC00D4DC /* VersaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VersaPlayer.release.xcconfig; sourceTree = "<group>"; };
+		4805EB8F8ED5A9B6818691844F9A104B /* SplitViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplitViewController.swift; path = SplitKit/SplitViewController.swift; sourceTree = "<group>"; };
 		4E343D2C06741BEFD5519F39CC10FAC4 /* Pods-netfit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-netfit-Info.plist"; sourceTree = "<group>"; };
-		4EF84B63B302C0DDFF8FB4E2721AE4BE /* VersaPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayer.swift; path = VersaPlayer/Classes/Source/Core/Player/VersaPlayer.swift; sourceTree = "<group>"; };
+		503BA71F292BCE39884FF5BEB5F7916E /* Snapped.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Snapped.swift; path = SplitKit/Snapped.swift; sourceTree = "<group>"; };
 		5061D5FA31E027D678EAE3D62771F233 /* SplitKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SplitKit.framework; path = SplitKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		58159AE5B1A7362AD8E46155F862429D /* SplitKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SplitKit-Info.plist"; sourceTree = "<group>"; };
-		59E8881054A53F3B8C31819028A464FC /* VersaPlayerPlaybackError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerPlaybackError.swift; path = VersaPlayer/Classes/Source/Core/Enums/VersaPlayerPlaybackError.swift; sourceTree = "<group>"; };
+		5088F22C7981A9A3BB58A6BAB98A3643 /* VersaPlayerGestureRecieverView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerGestureRecieverView.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Core/VersaPlayerGestureRecieverView.swift; sourceTree = "<group>"; };
+		5AF37C5B656D221D7E45CB9E4AF05A46 /* VersaPlayerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerView.swift; path = VersaPlayer/Classes/Source/VersaPlayerView.swift; sourceTree = "<group>"; };
+		5C08AE3835639A2111ACBCE5382CE742 /* Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Player.framework; path = Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E2AEA42FB94DD116316CFC15E8DC77 /* Pods-netfit-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-netfit-acknowledgements.plist"; sourceTree = "<group>"; };
-		63F396E14A3EFAC52961AE449EE34181 /* VersaPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VersaPlayer-umbrella.h"; sourceTree = "<group>"; };
+		664CD4515776B87C1617D974BB5FD647 /* Player.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Player.debug.xcconfig; sourceTree = "<group>"; };
 		67A4D4DD084F5BCCA66B326C45EF9C75 /* VersaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VersaPlayer.framework; path = VersaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		74201C7E929A128226B7AA59C364658C /* VersaPlayerPlaybackDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerPlaybackDelegate.swift; path = VersaPlayer/Classes/Source/Core/Protocols/VersaPlayerPlaybackDelegate.swift; sourceTree = "<group>"; };
-		7835DC3AAFF05F5446A2FF9172267C88 /* SplitKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SplitKit.debug.xcconfig; sourceTree = "<group>"; };
-		7C3001AF2250B79FFAC141DBAD99682C /* VersaPlayerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerExtension.swift; path = VersaPlayer/Classes/Source/Core/Protocols/VersaPlayerExtension.swift; sourceTree = "<group>"; };
-		7D691C0DA688B4BB1EAFD34CA56BABDE /* VersaPlayerRenderingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerRenderingView.swift; path = VersaPlayer/Classes/Source/Core/Rendering/VersaPlayerRenderingView.swift; sourceTree = "<group>"; };
-		830B86299F054F39495B61B10B40218A /* VersaTimeLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaTimeLabel.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Controls/VersaTimeLabel.swift; sourceTree = "<group>"; };
+		67AEB77F6ECB4B7A2E6A2E79D88BADB8 /* Player.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Sources/Player.swift; sourceTree = "<group>"; };
+		67FADD27FCAC5A222DC80059B5387470 /* VersaPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayer.swift; path = VersaPlayer/Classes/Source/Core/Player/VersaPlayer.swift; sourceTree = "<group>"; };
+		7253BE5691F3F2EC1B3D4490753F599B /* VersaPlayerDecryptionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerDecryptionDelegate.swift; path = VersaPlayer/Classes/Source/Core/Protocols/VersaPlayerDecryptionDelegate.swift; sourceTree = "<group>"; };
+		72ABC55882EAB15F8E870CC154F0A03B /* Player-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Player-Info.plist"; sourceTree = "<group>"; };
+		7D62D3057901449BA37E8AA0A32C495A /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InstantPanGestureRecognizer.swift; path = SplitKit/InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		7E6B34E28E18FF6CF2732D40BA7872AA /* VersaPlayerGestureRecieverViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerGestureRecieverViewDelegate.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Core/VersaPlayerGestureRecieverViewDelegate.swift; sourceTree = "<group>"; };
 		83EAC38735EE1A725745F92C7505732A /* Pods_netfit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_netfit.framework; path = "Pods-netfit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		894D3FC422ABF5E8B4C56CAB3F08FB70 /* VersaPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VersaPlayer.debug.xcconfig; sourceTree = "<group>"; };
-		8F7122638CB5C6F02452D77289C08204 /* VersaPlayerControlsCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerControlsCoordinator.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/VersaPlayerControlsCoordinator.swift; sourceTree = "<group>"; };
-		90050E6C1C17849F81F1B0F81B1B83DB /* SplitKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SplitKit.release.xcconfig; sourceTree = "<group>"; };
-		917D96DA8CA5C6F959FCE3F84B3083F3 /* SplitViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplitViewController.swift; path = SplitKit/SplitViewController.swift; sourceTree = "<group>"; };
-		92E0B217CEC37F2526873873D4D6647A /* SplitKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SplitKit-prefix.pch"; sourceTree = "<group>"; };
+		8855A91C92F014B88BA31E920A0964C2 /* Player-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Player-prefix.pch"; sourceTree = "<group>"; };
+		88CDDF8F014D0322AA9D9916FF689944 /* VersaPlayerMediaTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerMediaTrack.swift; path = VersaPlayer/Classes/Source/Core/Player/VersaPlayerMediaTrack.swift; sourceTree = "<group>"; };
+		8BCD459DEF715643B54ABD780CEA28D8 /* VersaPlayerControlsBehaviour.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerControlsBehaviour.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Core/VersaPlayerControlsBehaviour.swift; sourceTree = "<group>"; };
+		936E692542F4EFB848820C5B31F8C668 /* VersaPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VersaPlayer-dummy.m"; sourceTree = "<group>"; };
+		9376BFCCE932196B014437844E3C3AB6 /* VersaPlayerControls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerControls.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/VersaPlayerControls.swift; sourceTree = "<group>"; };
+		96F87DB8C1BD1454A066812E70708AA6 /* VersaSeekbarSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaSeekbarSlider.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Controls/VersaSeekbarSlider.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F7F3063CFBF762C966E6211D918A69A /* VersaPlayerControlsBehaviour.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerControlsBehaviour.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Core/VersaPlayerControlsBehaviour.swift; sourceTree = "<group>"; };
-		B14ED6CAE23791DF2F43ACBFB517371E /* SplitKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SplitKit.modulemap; sourceTree = "<group>"; };
+		A6E7E5818E5253C33B887BD10D98C6C6 /* SplitKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SplitKit-umbrella.h"; sourceTree = "<group>"; };
+		A9F09E3E088928F5724F455B60099042 /* Player.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Player.modulemap; sourceTree = "<group>"; };
+		AB42DD0840FE9B5B7515B499D84093C9 /* SplitKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SplitKit.release.xcconfig; sourceTree = "<group>"; };
+		B3A926DB8818E557C498183BED337FC0 /* Player-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Player-umbrella.h"; sourceTree = "<group>"; };
 		B606A1BC89A28EA6243D8CFC16E14E1B /* Pods-netfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-netfit.debug.xcconfig"; sourceTree = "<group>"; };
-		BDC053162BBB3AC902D9BDA5565FCBBC /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InstantPanGestureRecognizer.swift; path = SplitKit/InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
-		CA1B4EAED9CE4E660D2359FB27EAC15A /* VersaPlayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "VersaPlayer-Info.plist"; sourceTree = "<group>"; };
-		CEFEBF0843DC528EFD2B02AE517F8118 /* VersaPlayerGestureRecieverViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerGestureRecieverViewDelegate.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Core/VersaPlayerGestureRecieverViewDelegate.swift; sourceTree = "<group>"; };
-		D3AE25554C1A45D20EB30350F7F22285 /* VersaPlayerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerView.swift; path = VersaPlayer/Classes/Source/VersaPlayerView.swift; sourceTree = "<group>"; };
-		D77D90AA604A5E534E1A54297F89A44E /* SplitKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SplitKit-dummy.m"; sourceTree = "<group>"; };
-		DA40197D990BC3FBC3C0E8B7DFC9C3AD /* VersaPlayerMediaTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerMediaTrack.swift; path = VersaPlayer/Classes/Source/Core/Player/VersaPlayerMediaTrack.swift; sourceTree = "<group>"; };
-		DDFF4CE13F1C5DECCE05FE403DBBC92A /* VersaPlayerControls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerControls.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/VersaPlayerControls.swift; sourceTree = "<group>"; };
-		E3E6C13B65A40FF1D47094B0E5D97F62 /* Arrangement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Arrangement.swift; path = SplitKit/Arrangement.swift; sourceTree = "<group>"; };
-		E615E73BA2515061875F7BBC8E3D9523 /* VersaSeekbarSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaSeekbarSlider.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Controls/VersaSeekbarSlider.swift; sourceTree = "<group>"; };
+		BB88B69953EBD8E9481D9AAB82E18419 /* VersaPlayerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerExtension.swift; path = VersaPlayer/Classes/Source/Core/Protocols/VersaPlayerExtension.swift; sourceTree = "<group>"; };
+		BD0B54350D113DAA0C0FB20BE9673949 /* VersaPlayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "VersaPlayer-Info.plist"; sourceTree = "<group>"; };
+		C83B53EB5306CCED1531B0296DEB00AA /* SplitKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SplitKit.debug.xcconfig; sourceTree = "<group>"; };
+		D014D379D69721CFA036627E42E293F1 /* VersaPlayerItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerItem.swift; path = VersaPlayer/Classes/Source/Core/Player/VersaPlayerItem.swift; sourceTree = "<group>"; };
+		D21C851C968349E032F4ABA669A37D48 /* VersaPlayerRenderingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerRenderingView.swift; path = VersaPlayer/Classes/Source/Core/Rendering/VersaPlayerRenderingView.swift; sourceTree = "<group>"; };
+		DA103B30C94033C082DB78EEB2C22AE6 /* VersaPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = VersaPlayer.modulemap; sourceTree = "<group>"; };
+		DC5D52F70D21AEA00C193160D28FC89C /* SplitKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SplitKit-prefix.pch"; sourceTree = "<group>"; };
+		DC7E985DEE34470F0D69D53CA00133A8 /* VersaPlayerPlaybackDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerPlaybackDelegate.swift; path = VersaPlayer/Classes/Source/Core/Protocols/VersaPlayerPlaybackDelegate.swift; sourceTree = "<group>"; };
+		E06DD616F2C413296354AC06A255875D /* VersaStatefulButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaStatefulButton.swift; path = VersaPlayer/Classes/Source/VersaPlayerControls/Controls/VersaStatefulButton.swift; sourceTree = "<group>"; };
+		E7325A8903F83DC13D92D9A425153CD6 /* SplitKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SplitKit-Info.plist"; sourceTree = "<group>"; };
+		EE44F48ECF13A86C00EDA3722F3B3E02 /* Arrangement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Arrangement.swift; path = SplitKit/Arrangement.swift; sourceTree = "<group>"; };
+		F009E2C5FAC5008FEF503045AEA96584 /* SplitKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SplitKit.modulemap; sourceTree = "<group>"; };
 		F1674F7780FA0640E3EA0875C5371A30 /* Pods-netfit-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-netfit-frameworks.sh"; sourceTree = "<group>"; };
+		F42598CE0B50907FBD994830BA3C3292 /* VersaPlayerPlaybackError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerPlaybackError.swift; path = VersaPlayer/Classes/Source/Core/Enums/VersaPlayerPlaybackError.swift; sourceTree = "<group>"; };
+		F56D0ADF03E857404653D6CE58CD8B70 /* VersaPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VersaPlayer-umbrella.h"; sourceTree = "<group>"; };
 		F6438DAF08B418BAEAA873B2177C9A2F /* Pods-netfit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-netfit-dummy.m"; sourceTree = "<group>"; };
+		FD3D7555B47D7B95E09D1D5E3CBBBF75 /* VersaPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VersaPlayer.debug.xcconfig; sourceTree = "<group>"; };
 		FE1DB4572C663611DF1E0994DE907EC2 /* Pods-netfit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-netfit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +141,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6CD79E5CB52B5E4E7F9E3B61CE96C6BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED7A1057846247AA88EB8957FB6EE3B0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6156E777E2C84525922F32935E5F582 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,44 +157,107 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8EFD24BAFC8FEABCE83AC9624F69721 /* Frameworks */ = {
+		C923CC30A24BFED3758DE22953B0BDF3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26446E908FD7C0E1B7660586D0E64D1D /* Foundation.framework in Frameworks */,
+				E1A81E2E1F1B7628DC76CD91B9462458 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		519BE253383F8A9576427B0DE262A419 /* SplitKit */ = {
+		0988C2365C932439B21F12355C7DB70A /* VersaPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				E3E6C13B65A40FF1D47094B0E5D97F62 /* Arrangement.swift */,
-				34D3910EC3EBFCD870F842979046EF81 /* HandleView.swift */,
-				BDC053162BBB3AC902D9BDA5565FCBBC /* InstantPanGestureRecognizer.swift */,
-				0E570F4F7C3850B252163A05FE59EB1F /* Snapped.swift */,
-				917D96DA8CA5C6F959FCE3F84B3083F3 /* SplitViewController.swift */,
-				F603730DBD766F3F681419AF07843C6B /* Support Files */,
+				67FADD27FCAC5A222DC80059B5387470 /* VersaPlayer.swift */,
+				193A5B1ADCB831157B30156041FF05EC /* VersaPlayerCaptionStyling.swift */,
+				9376BFCCE932196B014437844E3C3AB6 /* VersaPlayerControls.swift */,
+				8BCD459DEF715643B54ABD780CEA28D8 /* VersaPlayerControlsBehaviour.swift */,
+				377341877A057E663596159FA09F4ED2 /* VersaPlayerControlsCoordinator.swift */,
+				7253BE5691F3F2EC1B3D4490753F599B /* VersaPlayerDecryptionDelegate.swift */,
+				BB88B69953EBD8E9481D9AAB82E18419 /* VersaPlayerExtension.swift */,
+				5088F22C7981A9A3BB58A6BAB98A3643 /* VersaPlayerGestureRecieverView.swift */,
+				7E6B34E28E18FF6CF2732D40BA7872AA /* VersaPlayerGestureRecieverViewDelegate.swift */,
+				D014D379D69721CFA036627E42E293F1 /* VersaPlayerItem.swift */,
+				88CDDF8F014D0322AA9D9916FF689944 /* VersaPlayerMediaTrack.swift */,
+				DC7E985DEE34470F0D69D53CA00133A8 /* VersaPlayerPlaybackDelegate.swift */,
+				F42598CE0B50907FBD994830BA3C3292 /* VersaPlayerPlaybackError.swift */,
+				D21C851C968349E032F4ABA669A37D48 /* VersaPlayerRenderingView.swift */,
+				5AF37C5B656D221D7E45CB9E4AF05A46 /* VersaPlayerView.swift */,
+				96F87DB8C1BD1454A066812E70708AA6 /* VersaSeekbarSlider.swift */,
+				E06DD616F2C413296354AC06A255875D /* VersaStatefulButton.swift */,
+				00B7B91EC98A64FEE13104A27CD938CA /* VersaTimeLabel.swift */,
+				3FEB0290D3234BDCC7CE97C18FA826A8 /* Support Files */,
 			);
-			name = SplitKit;
-			path = SplitKit;
+			name = VersaPlayer;
+			path = VersaPlayer;
 			sourceTree = "<group>";
 		};
-		770C7B46C6F839C2C2D00BBCC78A81FA /* Support Files */ = {
+		3FEB0290D3234BDCC7CE97C18FA826A8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0442A68E0E509D155D85E6438B988707 /* VersaPlayer.modulemap */,
-				04B7908DE6FB6F9B8745DC8546CDEE5A /* VersaPlayer-dummy.m */,
-				CA1B4EAED9CE4E660D2359FB27EAC15A /* VersaPlayer-Info.plist */,
-				21513DEE93ED9BE689EED3DDB197F57B /* VersaPlayer-prefix.pch */,
-				63F396E14A3EFAC52961AE449EE34181 /* VersaPlayer-umbrella.h */,
-				894D3FC422ABF5E8B4C56CAB3F08FB70 /* VersaPlayer.debug.xcconfig */,
-				348C8A781773C7FED45FC682C381D7FC /* VersaPlayer.release.xcconfig */,
+				DA103B30C94033C082DB78EEB2C22AE6 /* VersaPlayer.modulemap */,
+				936E692542F4EFB848820C5B31F8C668 /* VersaPlayer-dummy.m */,
+				BD0B54350D113DAA0C0FB20BE9673949 /* VersaPlayer-Info.plist */,
+				04DC1BA32B69D5026EC500F3EC5DEAF9 /* VersaPlayer-prefix.pch */,
+				F56D0ADF03E857404653D6CE58CD8B70 /* VersaPlayer-umbrella.h */,
+				FD3D7555B47D7B95E09D1D5E3CBBBF75 /* VersaPlayer.debug.xcconfig */,
+				377709A812D2C555F0888AACAC00D4DC /* VersaPlayer.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/VersaPlayer";
+			sourceTree = "<group>";
+		};
+		42445F5E33BFCED53479A0E6C9C6A9F6 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				67AEB77F6ECB4B7A2E6A2E79D88BADB8 /* Player.swift */,
+				79764495834BEC0FE2DF88E75CFDC9EE /* Support Files */,
+			);
+			name = Player;
+			path = Player;
+			sourceTree = "<group>";
+		};
+		5EA845D45DE4F0A2B93B7F6DF78EECD2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F009E2C5FAC5008FEF503045AEA96584 /* SplitKit.modulemap */,
+				22897D5B5E217CF95EAA18F417A51D4E /* SplitKit-dummy.m */,
+				E7325A8903F83DC13D92D9A425153CD6 /* SplitKit-Info.plist */,
+				DC5D52F70D21AEA00C193160D28FC89C /* SplitKit-prefix.pch */,
+				A6E7E5818E5253C33B887BD10D98C6C6 /* SplitKit-umbrella.h */,
+				C83B53EB5306CCED1531B0296DEB00AA /* SplitKit.debug.xcconfig */,
+				AB42DD0840FE9B5B7515B499D84093C9 /* SplitKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SplitKit";
+			sourceTree = "<group>";
+		};
+		71E2D17A1569E6D40891E35BDB3D12E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42445F5E33BFCED53479A0E6C9C6A9F6 /* Player */,
+				BFE951E3234F5F9D913BFD16A7DB9955 /* SplitKit */,
+				0988C2365C932439B21F12355C7DB70A /* VersaPlayer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		79764495834BEC0FE2DF88E75CFDC9EE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9F09E3E088928F5724F455B60099042 /* Player.modulemap */,
+				140D721AAB1074920CA216EC97039DA7 /* Player-dummy.m */,
+				72ABC55882EAB15F8E870CC154F0A03B /* Player-Info.plist */,
+				8855A91C92F014B88BA31E920A0964C2 /* Player-prefix.pch */,
+				B3A926DB8818E557C498183BED337FC0 /* Player-umbrella.h */,
+				664CD4515776B87C1617D974BB5FD647 /* Player.debug.xcconfig */,
+				2219BB798FFF4B15492CF3A1CDD9E1A7 /* Player.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Player";
 			sourceTree = "<group>";
 		};
 		8989EC79450A62FEC72002ADF114025F /* Targets Support Files */ = {
@@ -194,13 +285,29 @@
 			path = "Target Support Files/Pods-netfit";
 			sourceTree = "<group>";
 		};
-		9578ACABD84FFA7F0FE7110271030CAB /* Pods */ = {
+		AF29029795826B3CF4ABF45FA9993D64 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				519BE253383F8A9576427B0DE262A419 /* SplitKit */,
-				C7ADB3C34BD9D69937725ACA432A4B5A /* VersaPlayer */,
+				5C08AE3835639A2111ACBCE5382CE742 /* Player.framework */,
+				83EAC38735EE1A725745F92C7505732A /* Pods_netfit.framework */,
+				5061D5FA31E027D678EAE3D62771F233 /* SplitKit.framework */,
+				67A4D4DD084F5BCCA66B326C45EF9C75 /* VersaPlayer.framework */,
 			);
-			name = Pods;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFE951E3234F5F9D913BFD16A7DB9955 /* SplitKit */ = {
+			isa = PBXGroup;
+			children = (
+				EE44F48ECF13A86C00EDA3722F3B3E02 /* Arrangement.swift */,
+				12687079B388BE7CB4B8605334405117 /* HandleView.swift */,
+				7D62D3057901449BA37E8AA0A32C495A /* InstantPanGestureRecognizer.swift */,
+				503BA71F292BCE39884FF5BEB5F7916E /* Snapped.swift */,
+				4805EB8F8ED5A9B6818691844F9A104B /* SplitViewController.swift */,
+				5EA845D45DE4F0A2B93B7F6DF78EECD2 /* Support Files */,
+			);
+			name = SplitKit;
+			path = SplitKit;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -211,40 +318,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C7ADB3C34BD9D69937725ACA432A4B5A /* VersaPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				4EF84B63B302C0DDFF8FB4E2721AE4BE /* VersaPlayer.swift */,
-				06A22D42C7698B868526A803FCB2672D /* VersaPlayerCaptionStyling.swift */,
-				DDFF4CE13F1C5DECCE05FE403DBBC92A /* VersaPlayerControls.swift */,
-				9F7F3063CFBF762C966E6211D918A69A /* VersaPlayerControlsBehaviour.swift */,
-				8F7122638CB5C6F02452D77289C08204 /* VersaPlayerControlsCoordinator.swift */,
-				44464E38645FBCB6107CBC5C86642675 /* VersaPlayerDecryptionDelegate.swift */,
-				7C3001AF2250B79FFAC141DBAD99682C /* VersaPlayerExtension.swift */,
-				20BBD453EA8A9C657E4E641C8C2824EA /* VersaPlayerGestureRecieverView.swift */,
-				CEFEBF0843DC528EFD2B02AE517F8118 /* VersaPlayerGestureRecieverViewDelegate.swift */,
-				2A7B459AB886CBDD2E04D826B9859DDA /* VersaPlayerItem.swift */,
-				DA40197D990BC3FBC3C0E8B7DFC9C3AD /* VersaPlayerMediaTrack.swift */,
-				74201C7E929A128226B7AA59C364658C /* VersaPlayerPlaybackDelegate.swift */,
-				59E8881054A53F3B8C31819028A464FC /* VersaPlayerPlaybackError.swift */,
-				7D691C0DA688B4BB1EAFD34CA56BABDE /* VersaPlayerRenderingView.swift */,
-				D3AE25554C1A45D20EB30350F7F22285 /* VersaPlayerView.swift */,
-				E615E73BA2515061875F7BBC8E3D9523 /* VersaSeekbarSlider.swift */,
-				293E06238D6D061BA434C0D1503C685C /* VersaStatefulButton.swift */,
-				830B86299F054F39495B61B10B40218A /* VersaTimeLabel.swift */,
-				770C7B46C6F839C2C2D00BBCC78A81FA /* Support Files */,
-			);
-			name = VersaPlayer;
-			path = VersaPlayer;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				9578ACABD84FFA7F0FE7110271030CAB /* Pods */,
-				D7AC7C099516B9152B5A095EF600806F /* Products */,
+				71E2D17A1569E6D40891E35BDB3D12E7 /* Pods */,
+				AF29029795826B3CF4ABF45FA9993D64 /* Products */,
 				8989EC79450A62FEC72002ADF114025F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -255,31 +335,6 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D7AC7C099516B9152B5A095EF600806F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				83EAC38735EE1A725745F92C7505732A /* Pods_netfit.framework */,
-				5061D5FA31E027D678EAE3D62771F233 /* SplitKit.framework */,
-				67A4D4DD084F5BCCA66B326C45EF9C75 /* VersaPlayer.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F603730DBD766F3F681419AF07843C6B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B14ED6CAE23791DF2F43ACBFB517371E /* SplitKit.modulemap */,
-				D77D90AA604A5E534E1A54297F89A44E /* SplitKit-dummy.m */,
-				58159AE5B1A7362AD8E46155F862429D /* SplitKit-Info.plist */,
-				92E0B217CEC37F2526873873D4D6647A /* SplitKit-prefix.pch */,
-				22107D7BE7E6CBBF88AB6B998CE6670E /* SplitKit-umbrella.h */,
-				7835DC3AAFF05F5446A2FF9172267C88 /* SplitKit.debug.xcconfig */,
-				90050E6C1C17849F81F1B0F81B1B83DB /* SplitKit.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SplitKit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,11 +348,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B43F8C2DF688A31ED79F4BF53719A0AC /* Headers */ = {
+		85D0E57B499595A263DB48B4B49DA557 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE7E0F4C2948652789BB827601F485E3 /* Pods-netfit-umbrella.h in Headers */,
+				D7E85F3CC8531097F73467DB96D2C017 /* Player-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8820D8CD49EDB02723BA375CBF941842 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E4FE3381AB7C15DCE055A98BBD1815F /* Pods-netfit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +375,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3566CE7721250363BAE931141A0703B1 /* Player */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58F06BD8A6EFA0DC8644E52C1E0F1B20 /* Build configuration list for PBXNativeTarget "Player" */;
+			buildPhases = (
+				85D0E57B499595A263DB48B4B49DA557 /* Headers */,
+				57D4B1D65622FF1498C5D32EEB8F0627 /* Sources */,
+				C923CC30A24BFED3758DE22953B0BDF3 /* Frameworks */,
+				E050297DD1616FBA30614E6C633BBA62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Player;
+			productName = Player;
+			productReference = 5C08AE3835639A2111ACBCE5382CE742 /* Player.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		5ACA0DC3BFA94071DA9F7BA4146E146E /* SplitKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9FC1B193EA8833506E63E9AE6D57011 /* Build configuration list for PBXNativeTarget "SplitKit" */;
@@ -350,18 +431,19 @@
 		};
 		FFDCF9435F57336A7DB1BCC331CFE34F /* Pods-netfit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDDB1017C8DC97A2E4BF78DACCCE3561 /* Build configuration list for PBXNativeTarget "Pods-netfit" */;
+			buildConfigurationList = 1F042E739F7B6AFB90BD0C6E9B4C2F8C /* Build configuration list for PBXNativeTarget "Pods-netfit" */;
 			buildPhases = (
-				B43F8C2DF688A31ED79F4BF53719A0AC /* Headers */,
-				8AA93A7D516C92C097FEA246AAA06F70 /* Sources */,
-				F8EFD24BAFC8FEABCE83AC9624F69721 /* Frameworks */,
-				839B48291CB4A3BC9FF04502815E25BB /* Resources */,
+				8820D8CD49EDB02723BA375CBF941842 /* Headers */,
+				448C22A5C1485216F3A8ADE493CC9B25 /* Sources */,
+				6CD79E5CB52B5E4E7F9E3B61CE96C6BA /* Frameworks */,
+				F35D748A76C568645240F9817B1FC43F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3919753EAC3C46F8B6EF71B80CB2165D /* PBXTargetDependency */,
-				47BF3A29677B3728C4DBC0F4E0528425 /* PBXTargetDependency */,
+				05A3D68CC3EF6E55685F2933144EB083 /* PBXTargetDependency */,
+				5E6961B672C4F9E6F2DC47C17F264163 /* PBXTargetDependency */,
+				20787E73CA60983B8CEFF19B7AFE19C3 /* PBXTargetDependency */,
 			);
 			name = "Pods-netfit";
 			productName = "Pods-netfit";
@@ -386,10 +468,11 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = D7AC7C099516B9152B5A095EF600806F /* Products */;
+			productRefGroup = AF29029795826B3CF4ABF45FA9993D64 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				3566CE7721250363BAE931141A0703B1 /* Player */,
 				FFDCF9435F57336A7DB1BCC331CFE34F /* Pods-netfit */,
 				5ACA0DC3BFA94071DA9F7BA4146E146E /* SplitKit */,
 				9C10FCC9230D7F2B427D6CDB50584B25 /* VersaPlayer */,
@@ -405,14 +488,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		839B48291CB4A3BC9FF04502815E25BB /* Resources */ = {
+		CBCAFF80E144E4BB1D5D368208B6C4F0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBCAFF80E144E4BB1D5D368208B6C4F0 /* Resources */ = {
+		E050297DD1616FBA30614E6C633BBA62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F35D748A76C568645240F9817B1FC43F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -435,11 +525,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8AA93A7D516C92C097FEA246AAA06F70 /* Sources */ = {
+		448C22A5C1485216F3A8ADE493CC9B25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3796FC79EBACEB999536F791133942D6 /* Pods-netfit-dummy.m in Sources */,
+				A57C9C5AA262C7D40CB2B2E3B3E6986E /* Pods-netfit-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57D4B1D65622FF1498C5D32EEB8F0627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18E5A6107749831708601D49ACCE7186 /* Player-dummy.m in Sources */,
+				294F0ACFACC74E2153C08A72CB6306DA /* Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,21 +571,65 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3919753EAC3C46F8B6EF71B80CB2165D /* PBXTargetDependency */ = {
+		05A3D68CC3EF6E55685F2933144EB083 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SplitKit;
-			target = 5ACA0DC3BFA94071DA9F7BA4146E146E /* SplitKit */;
-			targetProxy = AF8D3297A12396D69CD5E734F7D1B2FE /* PBXContainerItemProxy */;
+			name = Player;
+			target = 3566CE7721250363BAE931141A0703B1 /* Player */;
+			targetProxy = 03BD118342357546814C65ADB4A5CB24 /* PBXContainerItemProxy */;
 		};
-		47BF3A29677B3728C4DBC0F4E0528425 /* PBXTargetDependency */ = {
+		20787E73CA60983B8CEFF19B7AFE19C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = VersaPlayer;
 			target = 9C10FCC9230D7F2B427D6CDB50584B25 /* VersaPlayer */;
-			targetProxy = 2A9EBD706801F9CF26C80D23DCC15F31 /* PBXContainerItemProxy */;
+			targetProxy = 42508A013C397F060E99D09B8DFD9DA4 /* PBXContainerItemProxy */;
+		};
+		5E6961B672C4F9E6F2DC47C17F264163 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SplitKit;
+			target = 5ACA0DC3BFA94071DA9F7BA4146E146E /* SplitKit */;
+			targetProxy = F8AA44530D24F1EAFF3AB8C363E4E737 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		13C27C088E8D57336D5C6F4AEC6A36B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B606A1BC89A28EA6243D8CFC16E14E1B /* Pods-netfit.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-netfit/Pods-netfit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-netfit/Pods-netfit.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -549,7 +692,7 @@
 		};
 		30781E4646CC58EFAFCDE78C8BF924CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7835DC3AAFF05F5446A2FF9172267C88 /* SplitKit.debug.xcconfig */;
+			baseConfigurationReference = C83B53EB5306CCED1531B0296DEB00AA /* SplitKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -581,9 +724,48 @@
 			};
 			name = Debug;
 		};
+		3A99C130C4D0F39B0ED0599BE26AD5FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE1DB4572C663611DF1E0994DE907EC2 /* Pods-netfit.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-netfit/Pods-netfit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-netfit/Pods-netfit.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		439CAE552273831D8A183E930CCDAE6B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90050E6C1C17849F81F1B0F81B1B83DB /* SplitKit.release.xcconfig */;
+			baseConfigurationReference = AB42DD0840FE9B5B7515B499D84093C9 /* SplitKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -618,7 +800,7 @@
 		};
 		7FD1B365074AA6BE41A944A6ADC06EF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 894D3FC422ABF5E8B4C56CAB3F08FB70 /* VersaPlayer.debug.xcconfig */;
+			baseConfigurationReference = FD3D7555B47D7B95E09D1D5E3CBBBF75 /* VersaPlayer.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -645,6 +827,77 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		990725C7EB7D9F648D66F37B5C56B106 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2219BB798FFF4B15492CF3A1CDD9E1A7 /* Player.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Player/Player-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Player/Player-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Player/Player.modulemap";
+				PRODUCT_MODULE_NAME = Player;
+				PRODUCT_NAME = Player;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9A6271D427630C0F0D1509C566C458A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 664CD4515776B87C1617D974BB5FD647 /* Player.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Player/Player-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Player/Player-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Player/Player.modulemap";
+				PRODUCT_MODULE_NAME = Player;
+				PRODUCT_NAME = Player;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -653,7 +906,7 @@
 		};
 		AE56A19BAC8DF5F6FE6D1FD7B0D874DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 348C8A781773C7FED45FC682C381D7FC /* VersaPlayer.release.xcconfig */;
+			baseConfigurationReference = 377709A812D2C555F0888AACAC00D4DC /* VersaPlayer.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -680,83 +933,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B4F8DC4FB17EFA9C664DA81CFCFBBB2A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B606A1BC89A28EA6243D8CFC16E14E1B /* Pods-netfit.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-netfit/Pods-netfit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-netfit/Pods-netfit.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D2C85C6D6EE18DA613D624ADCBD45A30 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE1DB4572C663611DF1E0994DE907EC2 /* Pods-netfit.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-netfit/Pods-netfit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-netfit/Pods-netfit.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -831,6 +1007,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F042E739F7B6AFB90BD0C6E9B4C2F8C /* Build configuration list for PBXNativeTarget "Pods-netfit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13C27C088E8D57336D5C6F4AEC6A36B9 /* Debug */,
+				3A99C130C4D0F39B0ED0599BE26AD5FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3512A841917075A9DA6E79D5D270C8BF /* Build configuration list for PBXNativeTarget "VersaPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -849,20 +1034,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		58F06BD8A6EFA0DC8644E52C1E0F1B20 /* Build configuration list for PBXNativeTarget "Player" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A6271D427630C0F0D1509C566C458A4 /* Debug */,
+				990725C7EB7D9F648D66F37B5C56B106 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B9FC1B193EA8833506E63E9AE6D57011 /* Build configuration list for PBXNativeTarget "SplitKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30781E4646CC58EFAFCDE78C8BF924CC /* Debug */,
 				439CAE552273831D8A183E930CCDAE6B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CDDB1017C8DC97A2E4BF78DACCCE3561 /* Build configuration list for PBXNativeTarget "Pods-netfit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B4F8DC4FB17EFA9C664DA81CFCFBBB2A /* Debug */,
-				D2C85C6D6EE18DA613D624ADCBD45A30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

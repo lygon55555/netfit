@@ -11,6 +11,7 @@ import UIKit
 import VideoToolbox
 import AVKit
 import CoreVideo
+import Player
 
 class ExerciseViewController: UIViewController, UIGestureRecognizerDelegate {
     
@@ -22,21 +23,48 @@ class ExerciseViewController: UIViewController, UIGestureRecognizerDelegate {
     private var currentFrame: CGImage?
     private var algorithm: Algorithm = .single
     private var poseBuilderConfiguration = PoseBuilderConfiguration()
-
+    private var player = Player()
     
-    
-    var lastRotation: CGFloat = 0
-
-    
-    
+    deinit {
+        self.player.willMove(toParent: nil)
+        self.player.view.removeFromSuperview()
+        self.player.removeFromParent()
+    }
     
     override func viewDidLoad() {
+        self.player.playerDelegate = self
+        self.player.playbackDelegate = self
+        self.videoView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.player.fillMode = .resizeAspectFill
+        self.player.view.layer.frame = self.videoView.bounds
+        self.addChild(self.player)
+        self.videoView.addSubview(self.player.view)
+        self.player.didMove(toParent: self)
+        
+        let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        self.player.view.addGestureRecognizer(tapGestureRecognizer)
+        self.view.addGestureRecognizer(tapGestureRecognizer)
+        
+        let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 65, height: 30))
+        let titleView: UIView = UIView.init(frame: rect)
+        let titleImage = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 65, height: 24))
+        titleImage.image = UIImage(named: "netfitLogo")
+        titleImage.contentMode = .scaleAspectFit
+        titleView.addSubview(titleImage)
+        self.navigationItem.titleView = titleView
+        
         self.tabBarController?.tabBar.isHidden = true
+        
         videoView.layer.cornerRadius = 10
-        videoView.layer.shadowOpacity = 0.7
+        videoView.clipsToBounds = true
+        videoView.layer.shadowColor = UIColor.gray.cgColor
+        videoView.layer.shadowOpacity = 1.0
         videoView.layer.shadowOffset = CGSize(width: 0, height: 0)
         videoView.layer.shadowRadius = 10
         videoView.layer.masksToBounds = false
+        
+        navigationBarButtonDesign()
         
         self.view.isUserInteractionEnabled = true
         self.view.isMultipleTouchEnabled = true
@@ -58,28 +86,78 @@ class ExerciseViewController: UIViewController, UIGestureRecognizerDelegate {
             fatalError("Failed to load model. \(error.localizedDescription)")
         }
         poseNet.delegate = self
-//        setupAndBeginCapturingVideoFrames()
-        
-        playVideo(from: "pilatesVideo.mov")
+        setupAndBeginCapturingVideoFrames() {
+//            playVideo(from: "pilatesVideo.mov")
+        }
     }
     
-    func playVideo(from file:String) {
-        let file = file.components(separatedBy: ".")
-
+    override func viewWillAppear(_ animated: Bool) {
+        
+        let file = "pilatesVideo.mov".components(separatedBy: ".")
         guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
             debugPrint( "\(file.joined(separator: ".")) not found")
             return
         }
-        let player = AVPlayer(url: URL(fileURLWithPath: path))
-
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = self.videoView.bounds
-        playerLayer.videoGravity = .resizeAspectFill
-        self.videoView.layer.addSublayer(playerLayer)
-        player.play()
+        self.player.url = URL(fileURLWithPath: path)
+        self.player.playFromBeginning()
     }
     
-    private func setupAndBeginCapturingVideoFrames() {
+    func navigationBarButtonDesign() {
+        let leftButton = UIButton(type: UIButton.ButtonType.custom)
+        leftButton.setImage(UIImage(named: "backButton"), for: .normal)
+        leftButton.addTarget(self, action:#selector(goBack), for: .touchDown)
+        leftButton.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+        let leftBarButton = UIBarButtonItem(customView: leftButton)
+        self.navigationItem.leftBarButtonItems = [leftBarButton]
+        
+        let backwardImage    = UIImage(systemName: "backward.end.fill")?.withTintColor(UIColor.init(red: 112/255, green: 112/255, blue: 112/255, alpha: 1), renderingMode: .alwaysOriginal)
+        let forwardImage  = UIImage(systemName: "forward.end.fill")?.withTintColor(UIColor.init(red: 112/255, green: 112/255, blue: 112/255, alpha: 1), renderingMode: .alwaysOriginal)
+
+        let backwardButton = UIBarButtonItem(image: backwardImage,  style: .plain, target: self, action: #selector(didTapBackwardButton(sender:)))
+        let forwardButton = UIBarButtonItem(image: forwardImage,  style: .plain, target: self, action: #selector(didTapForwardButton(sender:)))
+
+        navigationItem.rightBarButtonItems = [forwardButton, backwardButton]
+    }
+    
+    @objc func didTapBackwardButton(sender: AnyObject){
+        // 이전 영상 실행
+        // 첫번째 영상이면 알림창 보여주기
+        
+        
+        print("back")
+    }
+
+    @objc func didTapForwardButton(sender: AnyObject){
+        // 다음 영상 실행
+        // 마지막 영상이면 알림창 보여주기
+        
+        
+        print("forward")
+    }
+    
+    @objc func goBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    
+    func playVideo(from file:String) {
+//        let file = file.components(separatedBy: ".")
+//
+//        guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
+//            debugPrint( "\(file.joined(separator: ".")) not found")
+//            return
+//        }
+//        let player = AVPlayer(url: URL(fileURLWithPath: path))
+//        let playerLayer = AVPlayerLayer(player: player)
+//        playerLayer.frame = self.videoView.bounds
+//        playerLayer.videoGravity = .resizeAspectFill
+//        self.videoView.layer.addSublayer(playerLayer)
+//        player.play()
+    }
+    
+    private func setupAndBeginCapturingVideoFrames(completion: () -> Void) {
         videoCapture.setUpAVCapture { error in
             if let error = error {
                 print("Failed to setup camera with error \(error)")
@@ -89,6 +167,7 @@ class ExerciseViewController: UIViewController, UIGestureRecognizerDelegate {
             self.videoCapture.delegate = self
             self.videoCapture.startCapturing()
         }
+        completion()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -100,7 +179,9 @@ class ExerciseViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewWillTransition(to size: CGSize,
                                      with coordinator: UIViewControllerTransitionCoordinator) {
         // Reinitilize the camera to update its output stream with the new orientation.
-        setupAndBeginCapturingVideoFrames()
+        setupAndBeginCapturingVideoFrames() {
+            
+        }
     }
     
     @objc func doPinch(_ pinch: UIPinchGestureRecognizer) {
@@ -172,5 +253,61 @@ extension ExerciseViewController: PoseNetDelegate {
         
         poseCameraView.show(poses: poses, on: currentFrame)
 //        poseCameraView.show(poses: [], on: currentFrame)
+    }
+}
+
+extension ExerciseViewController: PlayerDelegate {
+    func playerReady(_ player: Player) {
+        print("\(#function) ready")
+    }
+    
+    func playerPlaybackStateDidChange(_ player: Player) {
+        print("\(#function) \(player.playbackState.description)")
+    }
+    
+    func playerBufferingStateDidChange(_ player: Player) {
+    }
+    
+    func playerBufferTimeDidChange(_ bufferTime: Double) {
+    }
+    
+    func player(_ player: Player, didFailWithError error: Error?) {
+        print("\(#function) error.description")
+    }
+}
+
+extension ExerciseViewController: PlayerPlaybackDelegate {
+    func playerCurrentTimeDidChange(_ player: Player) {
+    }
+    
+    func playerPlaybackWillStartFromBeginning(_ player: Player) {
+    }
+    
+    func playerPlaybackDidEnd(_ player: Player) {
+    }
+    
+    func playerPlaybackWillLoop(_ player: Player) {
+    }
+
+    func playerPlaybackDidLoop(_ player: Player) {
+    }
+}
+
+extension ExerciseViewController {
+    @objc func handleTapGestureRecognizer(_ gestureRecognizer: UITapGestureRecognizer) {
+        switch self.player.playbackState {
+        case .stopped:
+            self.player.playFromBeginning()
+            break
+        case .paused:
+            self.player.playFromCurrentTime()
+            break
+        case .playing:
+            self.player.pause()
+            break
+        case .failed:
+            self.player.pause()
+            break
+        }
     }
 }
