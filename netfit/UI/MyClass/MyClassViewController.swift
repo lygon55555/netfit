@@ -29,8 +29,8 @@ class MyClassViewController: UIViewController {
         myClass1CollectionView.delegate = self
         myClass1CollectionView.dataSource = self
         
-        var string0 = "AI코칭 수강 클래스 x3"
-        var string1 = "실시간 트레이닝 코칭 수강 클래스 x5"
+        let string0 = "AI코칭 수강 클래스 x3"
+        let string1 = "실시간 트레이닝 코칭 수강 클래스 x5"
         
         let attributedString0: NSMutableAttributedString  = NSMutableAttributedString(string: string0)
         attributedString0.setColor(color: UIColor.init(red: 47/255, green: 47/255, blue: 47/255, alpha: 1), forText: "AI코칭 수강 클래스")
@@ -56,57 +56,54 @@ class MyClassViewController: UIViewController {
 
         self.navigationItem.titleView = titleView
         
-        
-        
-        
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.topView.bounds
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         gradientLayer.colors = [
             UIColor(red: 219/255, green: 234/255, blue: 255/255, alpha: 1).cgColor,
             UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
         ]
-        gradientLayer.locations = [0, 0.3]
+        gradientLayer.locations = [0, 0.6]
         topView.layer.insertSublayer(gradientLayer, at: 0)
         
         let gradientLayer1 = CAGradientLayer()
         gradientLayer1.frame = self.bottomView.bounds
-        gradientLayer1.startPoint = CGPoint(x: 0.5, y: 0)
-        gradientLayer1.endPoint = CGPoint(x: 0.5, y: 1)
+        gradientLayer1.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer1.endPoint = CGPoint(x: 1, y: 1)
         gradientLayer1.colors = [
             UIColor(red: 219/255, green: 234/255, blue: 255/255, alpha: 1).cgColor,
             UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
         ]
-        gradientLayer1.locations = [0, 0.3]
+        gradientLayer1.locations = [0, 0.6]
         bottomView.layer.insertSublayer(gradientLayer1, at: 0)
         
-        let gradientLayer2 = CAGradientLayer()
-        gradientLayer2.frame = self.myClass0CollectionView.bounds
-        gradientLayer2.startPoint = CGPoint(x: 0, y: 0.5)
-        gradientLayer2.endPoint = CGPoint(x: 1, y: 0.5)
-        gradientLayer2.colors = [
-            UIColor(red: 219/255, green: 234/255, blue: 255/255, alpha: 1).cgColor,
-            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
-        ]
-        gradientLayer2.locations = [0, 0.4]
-        let gradientView = UIView(frame: self.myClass0CollectionView.bounds)
-        gradientView.layer.insertSublayer(gradientLayer2, at: 0)
-        myClass0CollectionView.backgroundView = gradientView
-        
-        
-        let gradientLayer3 = CAGradientLayer()
-        gradientLayer3.frame = self.myClass1CollectionView.bounds
-        gradientLayer3.startPoint = CGPoint(x: 0, y: 0.5)
-        gradientLayer3.endPoint = CGPoint(x: 1, y: 0.5)
-        gradientLayer3.colors = [
-            UIColor(red: 219/255, green: 234/255, blue: 255/255, alpha: 1).cgColor,
-            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
-        ]
-        gradientLayer3.locations = [0, 0.4]
-        let gradientView1 = UIView(frame: self.myClass1CollectionView.bounds)
-        gradientView1.layer.insertSublayer(gradientLayer3, at: 0)
-        myClass1CollectionView.backgroundView = gradientView1
+//        let gradientLayer2 = CAGradientLayer()
+//        gradientLayer2.frame = self.myClass0CollectionView.bounds
+//        gradientLayer2.startPoint = CGPoint(x: 0, y: 0.5)
+//        gradientLayer2.endPoint = CGPoint(x: 1, y: 0.5)
+//        gradientLayer2.colors = [
+//            UIColor(red: 219/255, green: 234/255, blue: 255/255, alpha: 1).cgColor,
+//            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
+//        ]
+//        gradientLayer2.locations = [0, 0.4]
+//        let gradientView = UIView(frame: self.myClass0CollectionView.bounds)
+//        gradientView.layer.insertSublayer(gradientLayer2, at: 0)
+//        myClass0CollectionView.backgroundView = gradientView
+//
+//
+//        let gradientLayer3 = CAGradientLayer()
+//        gradientLayer3.frame = self.myClass1CollectionView.bounds
+//        gradientLayer3.startPoint = CGPoint(x: 0, y: 0.5)
+//        gradientLayer3.endPoint = CGPoint(x: 1, y: 0.5)
+//        gradientLayer3.colors = [
+//            UIColor(red: 219/255, green: 234/255, blue: 255/255, alpha: 1).cgColor,
+//            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
+//        ]
+//        gradientLayer3.locations = [0, 0.4]
+//        let gradientView1 = UIView(frame: self.myClass1CollectionView.bounds)
+//        gradientView1.layer.insertSublayer(gradientLayer3, at: 0)
+//        myClass1CollectionView.backgroundView = gradientView1
     }
 }
 
