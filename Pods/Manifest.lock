@@ -1,24 +1,22 @@
 PODS:
+  - KDCalendar (1.8.9):
+    - KDCalendar/EventManager (= 1.8.9)
+  - KDCalendar/EventManager (1.8.9)
   - Player (0.13.2)
-  - SplitKit (1.0.2)
-  - VersaPlayer (3.0.2)
 
 DEPENDENCIES:
+  - KDCalendar (~> 1.8.9)
   - Player (~> 0.13.2)
-  - SplitKit
-  - VersaPlayer
 
 SPEC REPOS:
   trunk:
+    - KDCalendar
     - Player
-    - SplitKit
-    - VersaPlayer
 
 SPEC CHECKSUMS:
+  KDCalendar: a587bc486b992d82ef94bd04001fce9baf45e518
   Player: 7a2bcad3631034fa47d4b6fdedf7c4075fc236fe
-  SplitKit: a7de0577a6528152cd41bc0667ccc78a33abe6e8
-  VersaPlayer: 0e9a0ea7da786729ffb377dbd17b34641a8265e4
 
-PODFILE CHECKSUM: 787a7713558608e01541eeb30e9497c244ea2e47
+PODFILE CHECKSUM: 6f824b283df45ebc02f1f90fad929340b9b30c67
 
 COCOAPODS: 1.9.0

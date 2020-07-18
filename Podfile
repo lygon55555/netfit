@@ -5,10 +5,9 @@ target 'netfit' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-	pod 'SplitKit'
-	pod 'VersaPlayer'
 	pod "Player", "~> 0.13.2"
-
+	pod 'KDCalendar', '~> 1.8.9'
+  
   # Pods for netfit
 
 end

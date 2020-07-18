@@ -1,4 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-netfit/Pods-netfit-frameworks.sh
+${BUILT_PRODUCTS_DIR}/KDCalendar/KDCalendar.framework
 ${BUILT_PRODUCTS_DIR}/Player/Player.framework
-${BUILT_PRODUCTS_DIR}/SplitKit/SplitKit.framework
-${BUILT_PRODUCTS_DIR}/VersaPlayer/VersaPlayer.framework
