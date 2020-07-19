@@ -13,9 +13,9 @@ They will help you finish your workout.
 
 And AI tracks if you're doing well.
 
-![ReadMe%2070d51b60e5434ce997074679c45f9f45/_2020-07-19__7.21.42.png](ReadMe%2070d51b60e5434ce997074679c45f9f45/_2020-07-19__7.21.42.png)
+<img width="706" alt="_2020-07-19__7 21 42" src="https://user-images.githubusercontent.com/39911797/87877574-17793000-ca1a-11ea-9767-b9e981b49727.png">
 
-![ReadMe%2070d51b60e5434ce997074679c45f9f45/_2020-07-19__7.42.26.png](ReadMe%2070d51b60e5434ce997074679c45f9f45/_2020-07-19__7.42.26.png)
+![image](https://user-images.githubusercontent.com/39911797/87877582-2364f200-ca1a-11ea-9ff1-2c8b5a62c030.png)
 
 ### How to run
 
@@ -38,6 +38,6 @@ open netfit.xcworkspace
 
 ### Demo Preview
 
-![ReadMe%2070d51b60e5434ce997074679c45f9f45/_2020-07-19__7.45.49.png](ReadMe%2070d51b60e5434ce997074679c45f9f45/_2020-07-19__7.45.49.png)
+![image](https://user-images.githubusercontent.com/39911797/87877592-2f50b400-ca1a-11ea-93c9-d6823074b37d.png)
 
-![ReadMe%2070d51b60e5434ce997074679c45f9f45/_2020-07-19__7.45.32.png](ReadMe%2070d51b60e5434ce997074679c45f9f45/_2020-07-19__7.45.32.png)
+<img width="420" alt="_2020-07-19__7 45 32" src="https://user-images.githubusercontent.com/39911797/87877601-38da1c00-ca1a-11ea-9d23-169750d380e9.png">
