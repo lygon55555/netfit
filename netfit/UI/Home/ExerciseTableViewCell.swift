@@ -17,6 +17,7 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet var exerciseTimeLabel: UILabel!
     @IBOutlet var exercisePlayButton: UIButton!
     @IBOutlet var shadowView: ShadowView!
+    @IBOutlet var trainerNameLabel: UILabel!
     
     override func awakeFromNib() {
         let coverLayer = CALayer()

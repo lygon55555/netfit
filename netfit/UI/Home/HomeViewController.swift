@@ -17,6 +17,9 @@ class HomeViewController: UIViewController {
     @IBOutlet var exerciseTableView: UITableView!
     @IBOutlet var myInfoView: ShadowView!
     @IBOutlet var weekView: UIView!
+    @IBOutlet var settingButtonView: UIView!
+    @IBOutlet var ddayLabel: UILabel!
+    @IBOutlet var messageLabel: UILabel!
     
     var storyNames: [String] = ["김수연", "원다솜", "김용현"]
 
@@ -31,6 +34,20 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         
         homeViewDesign()
+        
+        if UserDefaults.exists(key: UserDefaultKey.boardMessage) {
+            messageLabel.text = UserDefaults.standard.string(forKey: UserDefaultKey.boardMessage)
+        }
+        else {
+            messageLabel.text = "목표 메시지를 설정해주세요"
+        }
+        
+        if UserDefaults.exists(key: UserDefaultKey.boardDday) {
+            ddayLabel.text = UserDefaults.standard.string(forKey: UserDefaultKey.boardDday)
+        }
+        else {
+            ddayLabel.text = "D-day"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,13 +74,17 @@ class HomeViewController: UIViewController {
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         gradientLayer.colors = [
-            UIColor(red: 105/255, green: 145/255, blue: 239/255, alpha: 1).cgColor,
+            UIColor(red: 219/255, green: 234/255, blue: 255/255, alpha: 1).cgColor,
             UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
         ]
-        gradientLayer.locations = [0, 0.5]
+        gradientLayer.locations = [0, 1]
         gradientView.layer.addSublayer(gradientLayer)
         
         self.exerciseTableView.setValue(UIColor.white , forKey: "tableHeaderBackgroundColor")
+        
+        settingButtonView.layer.cornerRadius = 8
+        settingButtonView.layer.borderColor = UIColor.init(red: 112/255, green: 112/255, blue: 112/255, alpha: 1).cgColor
+        settingButtonView.layer.borderWidth = 0.5
     }
     
     func generateRandomColor() -> UIColor {
@@ -74,6 +95,11 @@ class HomeViewController: UIViewController {
     }
     
     
+    @IBAction func editBoard(_ sender: Any) {
+        
+        
+        
+    }
     
     
     
@@ -105,17 +131,18 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerCollectionViewCell
-        cell.profileImageView.layer.borderWidth = 0
-        cell.profileImageView.layer.borderColor = UIColor.clear.cgColor
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerCollectionViewCell
-        cell.profileImageView.layer.borderWidth = 3
-        cell.profileImageView.layer.borderColor = UIColor.init(red: 121/255, green: 170/255, blue: 255/255, alpha: 1).cgColor
-    }
+//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerCollectionViewCell
+//        cell.profileImageView.layer.borderWidth = 0
+//        cell.profileImageView.layer.borderColor = UIColor.clear.cgColor
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        collectionView.deselectItem(at: indexPath, animated: true)
+//        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerCollectionViewCell
+//        cell.profileImageView.layer.borderWidth = 3
+//        cell.profileImageView.layer.borderColor = UIColor.init(red: 121/255, green: 170/255, blue: 255/255, alpha: 1).cgColor
+//    }
 }
 
 // MARK: - Exercise Table View
@@ -134,26 +161,35 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
-        cell.exerciseImageView.layer.sublayers?[0].backgroundColor = UIColor.white.cgColor
-        cell.exerciseImageView.layer.sublayers?[0].opacity = 0.54
-        
-        let coverLayer = CALayer()
-        coverLayer.frame = cell.exerciseTitle1View.bounds;
-        coverLayer.backgroundColor = UIColor.white.cgColor
-        coverLayer.opacity = 0.54
-        cell.exerciseTitle1View.layer.addSublayer(coverLayer)
-    }
-
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
-        cell.exerciseImageView.layer.sublayers?[0].backgroundColor = UIColor.black.cgColor
-        cell.exerciseImageView.layer.sublayers?[0].opacity = 0.6
-        
-        cell.exerciseTitle1View.layer.sublayers?[1].removeFromSuperlayer()
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
+//        cell.exerciseImageView.layer.sublayers?[0].backgroundColor = UIColor.white.cgColor
+//        cell.exerciseImageView.layer.sublayers?[0].opacity = 0.54
+//
+//        let coverLayer = CALayer()
+//        coverLayer.frame = cell.exerciseTitle1View.bounds;
+//        coverLayer.backgroundColor = UIColor.white.cgColor
+//        coverLayer.opacity = 0.54
+//        cell.exerciseTitle1View.layer.addSublayer(coverLayer)
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
+//
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
+//        cell.exerciseImageView.layer.sublayers?[0].backgroundColor = UIColor.black.cgColor
+//        cell.exerciseImageView.layer.sublayers?[0].opacity = 0.6
+//        cell.exerciseTitle1View.layer.sublayers?[1].removeFromSuperlayer()
+//        print("1")
+//    }
+//
+//    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+//        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
+//        cell.exerciseImageView.layer.sublayers?[0].backgroundColor = UIColor.black.cgColor
+//        cell.exerciseImageView.layer.sublayers?[0].opacity = 0.6
+//        cell.exerciseTitle1View.layer.sublayers?[1].removeFromSuperlayer()
+//        print("2")
+//        return indexPath
+//    }
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -164,18 +200,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         label.frame = CGRect(x: 30, y: 5, width: 100, height: 35)
         label.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.heavy)
         
-        
-        let addButton = UIImageView()
-        addButton.image = UIImage(named: "addButton")
-        addButton.frame = CGRect(x: 314, y: 5, width: 40, height: 40)
-        
-//        let addButton = UIButton()
-//        addButton.imageView?.image = UIImage(named: "addButton")
-//        addButton.frame = CGRect(x: 200, y: 5, width: 35, height: 35)
-        
-        
         view.addSubview(label)
-        view.addSubview(addButton)
         return view
     }
     
@@ -282,4 +307,10 @@ extension CALayer {
 
     addSublayer(border)
  }
+}
+
+extension UserDefaults {
+    static func exists(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
 }
