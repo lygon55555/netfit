@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-struct Pose {
+struct Pose: Equatable {
 
     /// A structure used to describe a parent-child relationship between two joints.
     struct Edge {
@@ -100,5 +100,9 @@ struct Pose {
     /// - returns: All edges that connect to or from `jointName`.
     static func edge(from parentJointName: Joint.Name, to childJointName: Joint.Name) -> Edge? {
         return Pose.edges.first(where: { $0.parent == parentJointName && $0.child == childJointName })
+    }
+    
+    static func == (lhs: Pose, rhs: Pose) -> Bool {
+        return lhs.joints == rhs.joints
     }
 }

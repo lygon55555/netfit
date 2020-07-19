@@ -160,6 +160,21 @@ extension MyClassViewController: UICollectionViewDelegate, UICollectionViewDataS
             return cell
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == myClass0CollectionView {
+            UserDefaults.standard.set("이슬", forKey: UserDefaultKey.selectedTrainer)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let exerciseViewController = mainStoryboard.instantiateViewController(withIdentifier: "InfluencerDetailVC") as! InfluencerDetailViewController
+            self.navigationController?.pushViewController(exerciseViewController, animated: true)
+        }
+        else {
+            UserDefaults.standard.set("한지훈", forKey: UserDefaultKey.selectedTrainer)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let exerciseViewController = mainStoryboard.instantiateViewController(withIdentifier: "InfluencerDetailVC") as! InfluencerDetailViewController
+            self.navigationController?.pushViewController(exerciseViewController, animated: true)
+        }
+    }
 }
 
 extension NSMutableAttributedString {

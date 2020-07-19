@@ -52,6 +52,8 @@ class HomeViewController: LottieLoading {
         else {
             ddayLabel.text = "D-day"
         }
+        
+//        showLoading()
     }
     
     override func viewWillAppear(_ animated: Bool) {

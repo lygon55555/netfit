@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-class Joint {
+class Joint: Equatable {
     enum Name: Int, CaseIterable {
         case nose
         case leftEye
@@ -64,5 +64,9 @@ class Joint {
         self.position = position
         self.confidence = confidence
         self.isValid = isValid
+    }
+    
+    static func == (lhs: Joint, rhs: Joint) -> Bool {
+        return lhs.confidence == rhs.confidence
     }
 }

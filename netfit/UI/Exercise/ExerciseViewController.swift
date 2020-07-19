@@ -13,11 +13,18 @@ import AVKit
 import CoreVideo
 import Player
 
-class ExerciseViewController: UIViewController, UIGestureRecognizerDelegate {
+class ExerciseViewController: LottieLoading, UIGestureRecognizerDelegate {
     
     @IBOutlet var videoView: UIView!
     @IBOutlet var poseCameraView: PoseImageView!
     
+    let checkTime: [Int] = [1, 3, 5, 7, 9, 11, 13, 15]
+    var savePoses: [Pose] = []
+    var timer = Timer()
+    var countTime: Double = 0
+    var after: Bool = false
+    private var generator:AVAssetImageGenerator!
+
     private let videoCapture = VideoCapture()
     private var poseNet: PoseNet!
     private var currentFrame: CGImage?
@@ -25,6 +32,7 @@ class ExerciseViewController: UIViewController, UIGestureRecognizerDelegate {
     private var poseBuilderConfiguration = PoseBuilderConfiguration()
     private var player = Player()
     
+    let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
     deinit {
         self.player.willMove(toParent: nil)
         self.player.view.removeFromSuperview()
@@ -41,7 +49,6 @@ class ExerciseViewController: UIViewController, UIGestureRecognizerDelegate {
         self.videoView.addSubview(self.player.view)
         self.player.didMove(toParent: self)
         
-        let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
         tapGestureRecognizer.numberOfTapsRequired = 1
         self.player.view.addGestureRecognizer(tapGestureRecognizer)
         self.view.addGestureRecognizer(tapGestureRecognizer)
@@ -63,9 +70,7 @@ class ExerciseViewController: UIViewController, UIGestureRecognizerDelegate {
         videoView.layer.shadowOffset = CGSize(width: 0, height: 0)
         videoView.layer.shadowRadius = 10
         videoView.layer.masksToBounds = false
-        
-        navigationBarButtonDesign()
-        
+                
         self.view.isUserInteractionEnabled = true
         self.view.isMultipleTouchEnabled = true
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(doPinch(_:)))
@@ -89,72 +94,220 @@ class ExerciseViewController: UIViewController, UIGestureRecognizerDelegate {
         setupAndBeginCapturingVideoFrames() {
 //            playVideo(from: "pilatesVideo.mov")
         }
+        
+        let selectedTheme = UserDefaults.standard.string(forKey: UserDefaultKey.selectedTheme)
+
+        switch selectedTheme {
+        case "승모근 스트레칭":
+            let file = "video0_0.mp4".components(separatedBy: ".")
+            guard let path = Bundle.main.path(forResource: file[0], ofType: file[1]) else { return }
+            let videoUrl: URL = URL(fileURLWithPath: path)
+            let asset:AVAsset = AVAsset(url: videoUrl)
+            self.generator = AVAssetImageGenerator(asset: asset)
+            self.generator.appliesPreferredTrackTransform = true
+        case "승모근과 팔뚝살 빼기":
+            let file = "video1_0.mp4".components(separatedBy: ".")
+            guard let path = Bundle.main.path(forResource: file[0], ofType: file[1]) else { return }
+            let videoUrl: URL = URL(fileURLWithPath: path)
+            let asset:AVAsset = AVAsset(url: videoUrl)
+            self.generator = AVAssetImageGenerator(asset: asset)
+            self.generator.appliesPreferredTrackTransform = true
+        case "전신 다이어트 스트레칭":
+            let file = "video2_0.mp4".components(separatedBy: ".")
+            guard let path = Bundle.main.path(forResource: file[0], ofType: file[1]) else { return }
+            let videoUrl: URL = URL(fileURLWithPath: path)
+            let asset:AVAsset = AVAsset(url: videoUrl)
+            self.generator = AVAssetImageGenerator(asset: asset)
+            self.generator.appliesPreferredTrackTransform = true
+        case "층간소음 없는 유산소 운동":
+            let file = "video3_0.mp4".components(separatedBy: ".")
+            guard let path = Bundle.main.path(forResource: file[0], ofType: file[1]) else { return }
+            let videoUrl: URL = URL(fileURLWithPath: path)
+            let asset:AVAsset = AVAsset(url: videoUrl)
+            self.generator = AVAssetImageGenerator(asset: asset)
+            self.generator.appliesPreferredTrackTransform = true
+        default: break
+        }
+        
+        
+//        let file = "video0_0.mp4".components(separatedBy: ".")
+//        guard let path = Bundle.main.path(forResource: file[0], ofType: file[1]) else { return }
+//        let videoUrl: URL = URL(fileURLWithPath: path)
+//        let asset:AVAsset = AVAsset(url: videoUrl)
+//        self.generator = AVAssetImageGenerator(asset: asset)
+//        self.generator.appliesPreferredTrackTransform = true
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now()) {
+//            print("save complete")
+//            self.savePosesToUserDefaults()
+//            self.after = true
+//            self.countTime = 0
+//            self.scheduledTimerWithTimeInterval()
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        let file = "pilatesVideo.mov".components(separatedBy: ".")
-        guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
-            debugPrint( "\(file.joined(separator: ".")) not found")
+        let selectedTheme = UserDefaults.standard.string(forKey: UserDefaultKey.selectedTheme)
+        switch selectedTheme {
+        case "승모근 스트레칭":
+            let file = "video0_0.mp4".components(separatedBy: ".")
+            guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
+                debugPrint( "\(file.joined(separator: ".")) not found")
+                return
+            }
+            self.player.url = URL(fileURLWithPath: path)
+        case "승모근과 팔뚝살 빼기":
+            let file = "video1_0.mp4".components(separatedBy: ".")
+            guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
+                debugPrint( "\(file.joined(separator: ".")) not found")
+                return
+            }
+            self.player.url = URL(fileURLWithPath: path)
+        case "전신 다이어트 스트레칭":
+            let file = "video2_0.mp4".components(separatedBy: ".")
+            guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
+                debugPrint( "\(file.joined(separator: ".")) not found")
+                return
+            }
+            self.player.url = URL(fileURLWithPath: path)
+        case "층간소음 없는 유산소 운동":
+            let file = "video3_0.mp4".components(separatedBy: ".")
+            guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
+                debugPrint( "\(file.joined(separator: ".")) not found")
+                return
+            }
+            self.player.url = URL(fileURLWithPath: path)
+        default: break
+        }
+        self.player.playFromBeginning()
+        self.showLoading()
+    }
+    
+    func scheduledTimerWithTimeInterval() {
+        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+    }
+    
+    func savePosesToUserDefaults() {
+        UserDefaults.standard.setValue(savePoses, forKey: "poses1")
+    }
+    
+    @objc func updateCounting() {
+        NSLog("counting..")
+        countTime = countTime + 0.1
+
+        if after {
+//            showFrame(fromTime: countTime)
+            getFrame(fromTime: Float64(countTime))
+        }
+        else {
+            getFrame(fromTime: Float64(countTime))
+        }
+    }
+    
+    func getFrame(fromTime:Float64) {
+        let time:CMTime = CMTimeMakeWithSeconds(fromTime, preferredTimescale:600)
+        let image:CGImage
+        do {
+            try image = self.generator.copyCGImage(at:time, actualTime:nil)
+        }
+        catch {
             return
         }
-        self.player.url = URL(fileURLWithPath: path)
-        self.player.playFromBeginning()
+
+//        imgView.image = UIImage(cgImage: image)
+        poseNet.predict(image)
+
+        let modelInputSize = CGSize(width: 513, height: 513)
+        let outputStride = 16
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            let input = PoseNetInput(image: image, size: modelInputSize)
+            guard let prediction = try? self.poseNet.poseNetMLModel.prediction(from: input) else { return }
+            let poseNetOutput = PoseNetOutput(prediction: prediction, modelInputSize: modelInputSize, modelOutputStride: outputStride)
+
+            let poseBuilder = PoseBuilder(output: poseNetOutput, configuration: self.poseBuilderConfiguration, inputImage: image)
+            let poses = self.algorithm == .single ? [poseBuilder.pose] : poseBuilder.poses
+        
+            self.savePoses = poses
+//            self.savePoses.append(contentsOf: poses)
+//            UserDefaults.standard.setValue(poses, forKey: "poses1")
+//            self.imgView.show(poses: poses, on: image)
+        }
     }
     
-    func navigationBarButtonDesign() {
-        let leftButton = UIButton(type: UIButton.ButtonType.custom)
-        leftButton.setImage(UIImage(named: "backButton"), for: .normal)
-        leftButton.addTarget(self, action:#selector(goBack), for: .touchDown)
-        leftButton.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
-        let leftBarButton = UIBarButtonItem(customView: leftButton)
-        self.navigationItem.leftBarButtonItems = [leftBarButton]
-        
-        let backwardImage    = UIImage(systemName: "backward.end.fill")?.withTintColor(UIColor.init(red: 112/255, green: 112/255, blue: 112/255, alpha: 1), renderingMode: .alwaysOriginal)
-        let forwardImage  = UIImage(systemName: "forward.end.fill")?.withTintColor(UIColor.init(red: 112/255, green: 112/255, blue: 112/255, alpha: 1), renderingMode: .alwaysOriginal)
-
-        let backwardButton = UIBarButtonItem(image: backwardImage,  style: .plain, target: self, action: #selector(didTapBackwardButton(sender:)))
-        let forwardButton = UIBarButtonItem(image: forwardImage,  style: .plain, target: self, action: #selector(didTapForwardButton(sender:)))
-
-        navigationItem.rightBarButtonItems = [forwardButton, backwardButton]
-    }
-    
-    @objc func didTapBackwardButton(sender: AnyObject){
-        // 이전 영상 실행
-        // 첫번째 영상이면 알림창 보여주기
-        
+    @objc func didTapBackwardButton(sender: AnyObject) {
+        let selectedTheme = UserDefaults.standard.string(forKey: UserDefaultKey.selectedTheme)
+        switch selectedTheme {
+        case "승모근 스트레칭":
+            ToastUtil.showToastMessage(controller: self, toastMsg: "영상이 1개입니다")
+        case "승모근과 팔뚝살 빼기":
+            if let url = self.player.url {
+                if url.absoluteString.contains("video1_0") {
+                    ToastUtil.showToastMessage(controller: self, toastMsg: "첫번재 영상입니다")
+                }
+                else {
+                    let file = "video1_1.mp4".components(separatedBy: ".")
+                    guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
+                        debugPrint( "\(file.joined(separator: ".")) not found")
+                        return
+                    }
+                    self.player.url = URL(fileURLWithPath: path)
+//                    self.player.playFromBeginning()
+                }
+            }
+        case "전신 다이어트 스트레칭":
+            if let url = self.player.url {
+                if url.absoluteString.contains("video2_0") {
+                    ToastUtil.showToastMessage(controller: self, toastMsg: "첫번재 영상입니다")
+                }
+                else {
+                    let file = "video2_1.mp4".components(separatedBy: ".")
+                    guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
+                        debugPrint( "\(file.joined(separator: ".")) not found")
+                        return
+                    }
+                    self.player.url = URL(fileURLWithPath: path)
+                    self.player.playFromBeginning()
+                }
+            }
+        case "층간소음 없는 유산소 운동":
+            ToastUtil.showToastMessage(controller: self, toastMsg: "영상이 1개입니다")
+        default: break
+        }
         
         print("back")
     }
 
-    @objc func didTapForwardButton(sender: AnyObject){
-        // 다음 영상 실행
-        // 마지막 영상이면 알림창 보여주기
-        
+    @objc func didTapForwardButton(sender: AnyObject) {
+        let selectedTheme = UserDefaults.standard.string(forKey: UserDefaultKey.selectedTheme)
+        switch selectedTheme {
+        case "승모근 스트레칭":
+            ToastUtil.showToastMessage(controller: self, toastMsg: "영상이 1개입니다")
+        case "승모근과 팔뚝살 빼기":
+            let file = "video1_0.mp4".components(separatedBy: ".")
+            guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
+                debugPrint( "\(file.joined(separator: ".")) not found")
+                return
+            }
+            self.player.url = URL(fileURLWithPath: path)
+        case "전신 다이어트 스트레칭":
+            let file = "video2_0.mp4".components(separatedBy: ".")
+            guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
+                debugPrint( "\(file.joined(separator: ".")) not found")
+                return
+            }
+            self.player.url = URL(fileURLWithPath: path)
+        case "층간소음 없는 유산소 운동":
+            ToastUtil.showToastMessage(controller: self, toastMsg: "영상이 1개입니다")
+        default: break
+        }
         
         print("forward")
     }
     
     @objc func goBack() {
         self.navigationController?.popViewController(animated: true)
-    }
-    
-    
-    
-    
-    func playVideo(from file:String) {
-//        let file = file.components(separatedBy: ".")
-//
-//        guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
-//            debugPrint( "\(file.joined(separator: ".")) not found")
-//            return
-//        }
-//        let player = AVPlayer(url: URL(fileURLWithPath: path))
-//        let playerLayer = AVPlayerLayer(player: player)
-//        playerLayer.frame = self.videoView.bounds
-//        playerLayer.videoGravity = .resizeAspectFill
-//        self.videoView.layer.addSublayer(playerLayer)
-//        player.play()
     }
     
     private func setupAndBeginCapturingVideoFrames(completion: () -> Void) {
@@ -252,7 +405,17 @@ extension ExerciseViewController: PoseNetDelegate {
             : poseBuilder.poses
         
         poseCameraView.show(poses: poses, on: currentFrame)
-//        poseCameraView.show(poses: [], on: currentFrame)
+        
+        
+        
+        if poses == savePoses {
+            print("same poses")
+        }
+        else {
+            print("different poses")
+        }
+        
+        print("count count \(savePoses.count)")
     }
 }
 
@@ -278,6 +441,7 @@ extension ExerciseViewController: PlayerDelegate {
 
 extension ExerciseViewController: PlayerPlaybackDelegate {
     func playerCurrentTimeDidChange(_ player: Player) {
+//        print(Int(player.currentTime))
     }
     
     func playerPlaybackWillStartFromBeginning(_ player: Player) {

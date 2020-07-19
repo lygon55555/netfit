@@ -47,8 +47,6 @@ class GetFrameViewController: UIViewController {
         poseNet.delegate = self
         setupAndBeginCapturingVideoFrames()
         
-        
-        
         let file = "pilatesVideo.mov".components(separatedBy: ".")
         guard let path = Bundle.main.path(forResource: file[0], ofType: file[1]) else { return }
         let videoUrl: URL = URL(fileURLWithPath: path)
@@ -60,10 +58,10 @@ class GetFrameViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
             print("save complete")
-//            self.savePosesToUserDefaults()
+            self.savePosesToUserDefaults()
             self.after = true
             self.countTime = 0.05
-//            self.scheduledTimerWithTimeInterval()
+            self.scheduledTimerWithTimeInterval()
 
         }
     }
