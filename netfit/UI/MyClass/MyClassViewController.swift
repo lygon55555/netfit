@@ -45,6 +45,10 @@ class MyClassViewController: UIViewController {
         viewDesign()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     func viewDesign() {
         let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 65, height: 30))
         let titleView: UIView = UIView.init(frame: rect)
