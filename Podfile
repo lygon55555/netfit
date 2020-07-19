@@ -7,7 +7,8 @@ target 'netfit' do
 
 	pod "Player", "~> 0.13.2"
 	pod 'KDCalendar', '~> 1.8.9'
-  
+	pod 'lottie-ios'
+
   # Pods for netfit
 
 end
