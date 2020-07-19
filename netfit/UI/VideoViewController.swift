@@ -9,11 +9,9 @@
 import UIKit
 import AVKit
 import CoreVideo
-import VersaPlayer
 
 class VideoViewController: UIViewController {
     
-    var playerView = VersaPlayerView()
     var videoView = UIView()
     
     override func viewDidLoad() {

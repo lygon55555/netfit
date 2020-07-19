@@ -11,7 +11,6 @@ import UIKit
 import VideoToolbox
 import AVKit
 import CoreVideo
-import SplitKit
 
 class ViewController: UIViewController {
 
@@ -25,22 +24,22 @@ class ViewController: UIViewController {
 //    private var algorithm: Algorithm = .single
 //    private var poseBuilderConfiguration = PoseBuilderConfiguration()
     
-    var splitVC = SplitViewController()
-    var cameraVC = CameraViewController()
-    var videoVC = VideoViewController()
+//    var splitVC = SplitViewController()
+//    var cameraVC = CameraViewController()
+//    var videoVC = VideoViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addChild(splitVC)
-        splitVC.view.frame = self.view.bounds
-        splitVC.view.autoresizingMask = .flexibleHeight
-        self.view.addSubview(splitVC.view)
-        splitVC.didMove(toParent: self)
-        splitVC.arrangement = .vertical
-        
-        splitVC.firstChild = videoVC
-        splitVC.secondChild = cameraVC
+//        self.addChild(splitVC)
+//        splitVC.view.frame = self.view.bounds
+//        splitVC.view.autoresizingMask = .flexibleHeight
+//        self.view.addSubview(splitVC.view)
+//        splitVC.didMove(toParent: self)
+//        splitVC.arrangement = .vertical
+//
+//        splitVC.firstChild = videoVC
+//        splitVC.secondChild = cameraVC
         
 //        splitVC.firstChild = cameraVC
 //        splitVC.secondChild = videoVC

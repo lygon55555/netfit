@@ -11,7 +11,6 @@ import UIKit
 import VideoToolbox
 import AVKit
 import CoreVideo
-import SplitKit
 
 class TempViewController: UIViewController {
 
