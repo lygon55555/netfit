@@ -28,6 +28,8 @@
 		C78AA46624BE061E0067AFDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AA46524BE061E0067AFDC /* HomeViewController.swift */; };
 		C78AA46824BE8F7C0067AFDC /* InfluencerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AA46724BE8F7C0067AFDC /* InfluencerCollectionViewCell.swift */; };
 		C78AA46A24BE8FC00067AFDC /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AA46924BE8FC00067AFDC /* ExerciseTableViewCell.swift */; };
+		C79899FC24C34F8C00F4FE4F /* ToastUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79899FB24C34F8C00F4FE4F /* ToastUtil.swift */; };
+		C79899FE24C4151B00F4FE4F /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79899FD24C4151B00F4FE4F /* UserDefaultKey.swift */; };
 		C79B2BF824C2EFFC001ADD0D /* EditBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79B2BF724C2EFFC001ADD0D /* EditBoardViewController.swift */; };
 		C7A3B73B24BF2C7500B674B1 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A3B73A24BF2C7500B674B1 /* ExerciseViewController.swift */; };
 		C7B6ADDE24BF026D00E1A205 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B6ADDD24BF026D00E1A205 /* MainTabBarController.swift */; };
@@ -77,6 +79,8 @@
 		C78AA46524BE061E0067AFDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C78AA46724BE8F7C0067AFDC /* InfluencerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerCollectionViewCell.swift; sourceTree = "<group>"; };
 		C78AA46924BE8FC00067AFDC /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		C79899FB24C34F8C00F4FE4F /* ToastUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastUtil.swift; sourceTree = "<group>"; };
+		C79899FD24C4151B00F4FE4F /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		C79B2BF724C2EFFC001ADD0D /* EditBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBoardViewController.swift; sourceTree = "<group>"; };
 		C7A3B73A24BF2C7500B674B1 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		C7B6ADDD24BF026D00E1A205 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C70B50D024C3369B00FD8C39 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				C7A3B73A24BF2C7500B674B1 /* ExerciseViewController.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
 		C723164F24BCA6DA00F30590 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +143,7 @@
 				C7EC972524BC959700CEE2E9 /* ViewController.swift */,
 				C737996A24C1882A0017EE2F /* Home */,
 				C737996B24C1884F0017EE2F /* InfluencerDetail */,
-				C7A3B73A24BF2C7500B674B1 /* ExerciseViewController.swift */,
+				C70B50D024C3369B00FD8C39 /* Exercise */,
 				C737996C24C188650017EE2F /* ExerciseList */,
 				C72905FF24C0753E00E0DBFE /* GetFrameViewController.swift */,
 				C7702C9924C2D85500B8DC7E /* Search */,
@@ -250,6 +262,7 @@
 				C7EC974324BC9DB000CEE2E9 /* PoseNetInput.swift */,
 				C7EC974524BC9DCD00CEE2E9 /* PoseNetOutput.swift */,
 				C7EC974724BC9DE200CEE2E9 /* PoseNet.swift */,
+				C79899FD24C4151B00F4FE4F /* UserDefaultKey.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,6 +282,7 @@
 				C7EC975124BC9EBA00CEE2E9 /* VideoCapture.swift */,
 				C7EC975324BC9ECF00CEE2E9 /* AVCaptureVideoOrientation+Extension.swift */,
 				C70935F824BD9630005ACDD1 /* ShadowView.swift */,
+				C79899FB24C34F8C00F4FE4F /* ToastUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -400,6 +414,7 @@
 			files = (
 				C729060024C0753E00E0DBFE /* GetFrameViewController.swift in Sources */,
 				C7EC974A24BC9E0900CEE2E9 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
+				C79899FE24C4151B00F4FE4F /* UserDefaultKey.swift in Sources */,
 				C7EC973D24BC9D2500CEE2E9 /* PoseBuilder+Multiple.swift in Sources */,
 				C7EC973B24BC9D0200CEE2E9 /* PoseBuilder+Single.swift in Sources */,
 				C7EC974124BC9D4A00CEE2E9 /* Joint.swift in Sources */,
@@ -425,6 +440,7 @@
 				C78AA46824BE8F7C0067AFDC /* InfluencerCollectionViewCell.swift in Sources */,
 				C737996724C186AD0017EE2F /* InfluencerDetailViewController.swift in Sources */,
 				C7EC974624BC9DCD00CEE2E9 /* PoseNetOutput.swift in Sources */,
+				C79899FC24C34F8C00F4FE4F /* ToastUtil.swift in Sources */,
 				C70935FB24BD9C0D005ACDD1 /* TempViewController.swift in Sources */,
 				C7EC975424BC9ECF00CEE2E9 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
 				C70935F324BD7307005ACDD1 /* CameraViewController.swift in Sources */,
