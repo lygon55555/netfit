@@ -11,4 +11,7 @@ import Foundation
 struct UserDefaultKey {
     static let boardMessage: String = "boardMessage"
     static let boardDday: String = "boardDday"
+    static let selectedTrainer: String = "selectedTrainer"
+    static let selectedDate: String = "selectedDate"
+    static let selectedTheme: String = "selectedTheme"
 }
