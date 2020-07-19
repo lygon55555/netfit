@@ -14,7 +14,6 @@ import KDCalendar
 class EditBoardViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var calendarView: CalendarView!
-    @IBOutlet var ddayTextField: UITextField!
     @IBOutlet var messageTextField: UITextField!
     @IBOutlet var ddayLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
@@ -53,17 +52,10 @@ class EditBoardViewController: UIViewController, UITextFieldDelegate {
         
         navigationBarDesign()
         
-        ddayTextField.delegate = self
         messageTextField.delegate = self
-        ddayTextField.isHidden = true
         messageTextField.isHidden = true
         ddayLabel.isUserInteractionEnabled = true
         messageLabel.isUserInteractionEnabled = true
-        
-        let ddaySelector : Selector = #selector(self.ddayTapped)
-        let ddayTapGesture = UITapGestureRecognizer(target: self, action: ddaySelector)
-        ddayTapGesture.numberOfTapsRequired = 1
-        ddayLabel.addGestureRecognizer(ddayTapGesture)
         
         let messageSelector : Selector = #selector(self.messageTapped)
         let messageTapGesture = UITapGestureRecognizer(target: self, action: messageSelector)
@@ -78,7 +70,7 @@ class EditBoardViewController: UIViewController, UITextFieldDelegate {
         }
         
         if UserDefaults.exists(key: UserDefaultKey.boardDday) {
-            ddayLabel.text = UserDefaults.standard.string(forKey: UserDefaultKey.boardDday)
+            ddayLabel.text = "D-\(UserDefaults.standard.integer(forKey: UserDefaultKey.boardDday))"
         }
         else {
             ddayLabel.text = "D-day"
@@ -93,40 +85,42 @@ class EditBoardViewController: UIViewController, UITextFieldDelegate {
         
         
         
+        let selectedDate = UserDefaults.standard.integer(forKey: UserDefaultKey.boardDday)
+        
         // 목표 설정한 날짜 보이게 하기
         var tomorrowComponents = DateComponents()
-        tomorrowComponents.day = 1
+        tomorrowComponents.day = selectedDate
         let tomorrow = self.calendarView.calendar.date(byAdding: tomorrowComponents, to: today)!
         self.calendarView.selectDate(tomorrow)
     }
     
-    @objc func ddayTapped(){
-        ddayLabel.isHidden = true
-        ddayTextField.isHidden = false
-        ddayTextField.text = ddayLabel.text
+    override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.set(messageTextField.text, forKey: UserDefaultKey.boardMessage)
     }
     
-    @objc func messageTapped(){
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    
+    @objc func ddayTapped() {
+        // 달력 보여주기
+    }
+    
+    @objc func messageTapped() {
         messageLabel.isHidden = true
         messageTextField.isHidden = false
         messageTextField.text = messageLabel.text
     }
 
     func textFieldShouldReturn(userText: UITextField) -> Bool {
-        if userText == ddayTextField {
-            userText.resignFirstResponder()
-            ddayTextField.isHidden = true
-            ddayLabel.isHidden = false
-            ddayLabel.text = ddayTextField.text
-            return true
-        }
-        else {
-            userText.resignFirstResponder()
-            messageTextField.isHidden = true
-            messageLabel.isHidden = false
-            messageLabel.text = messageTextField.text
-            return true
-        }
+        userText.resignFirstResponder()
+        messageTextField.becomeFirstResponder()
+        messageTextField.isHidden = true
+        messageLabel.isHidden = false
+        messageLabel.text = messageTextField.text
+        UserDefaults.standard.set(messageTextField.text, forKey: UserDefaultKey.boardMessage)
+        print("text \(userText.text)")
+        return true
     }
     
     func navigationBarDesign() {
@@ -193,8 +187,24 @@ extension EditBoardViewController: CalendarViewDelegate {
             print("\t\"\(event.title)\" - Starting at:\(event.startDate)")
         }
         
-        
-        // 디데이 바뀐 거 알림 보여주기
+        let calendar = Calendar.current
+        let today = Date()
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: today)
+        let date2 = calendar.startOfDay(for: date)
+
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        if let dday = components.day {
+            
+            if dday > 0 {
+                print("dday \(dday)")
+                UserDefaults.standard.set(dday, forKey: UserDefaultKey.boardDday)
+                self.ddayLabel.text = "D-\(dday)"
+            }
+            else {
+                ToastUtil.showToastMessage(controller: self, toastMsg: "오늘 이후의 날짜를 선택해주세요")
+            }
+        }
     }
 
     func calendar(_ calendar: CalendarView, didLongPressDate date : Date, withEvents events: [CalendarEvent]?) {

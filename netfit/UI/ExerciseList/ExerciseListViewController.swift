@@ -16,6 +16,7 @@ class ExerciseListViewController: UIViewController {
     
     let titleArr = ["일어나란 말이야 지금 잠들때가 아니라 말이야", "삼겹살을 먹으려면 PT를 해야 할껄?", "1:1 발레 자세 교정으로 당당한 걸음을"]
     let nameArr = ["김수연", "원다솜", "김용현"]
+    var selectedTheme: String!
     
     override func viewDidLoad() {
         exerciseListTableView.delegate = self
@@ -24,6 +25,8 @@ class ExerciseListViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         
         navigationBarDesign()
+        
+        selectedTheme = UserDefaults.standard.string(forKey: UserDefaultKey.selectedTheme)
     }
     
     func navigationBarDesign() {
@@ -47,16 +50,50 @@ class ExerciseListViewController: UIViewController {
 
 extension ExerciseListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        switch selectedTheme {
+        case "승모근 스트레칭":
+            return 1
+        case "승모근과 팔뚝살 빼기":
+            return 2
+        case "전신 다이어트 스트레칭":
+            return 2
+        case "층간소음 없는 유산소 운동":
+            return 2
+        default: return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = exerciseListTableView.dequeueReusableCell(withIdentifier: "ExerciseListCell", for: indexPath) as! ExerciseListTableViewCell
-        cell.selectionStyle = .none
-        cell.exerciseTitleLabel.text = titleArr[indexPath.row % 3]
-        cell.exerciseTrainerLabel.text = nameArr[indexPath.row % 3]
-        cell.thumbnailView.image = UIImage(named: "img3")
-        
+        switch selectedTheme {
+        case "승모근 스트레칭":
+            cell.selectionStyle = .none
+            cell.exerciseTitleLabel.text = titleArr[indexPath.row % 3]
+            cell.exerciseTrainerLabel.text = nameArr[indexPath.row % 3]
+            cell.thumbnailView.image = UIImage(named: "\(indexPath.row+1)")
+        case "승모근과 팔뚝살 빼기":
+            cell.selectionStyle = .none
+            cell.exerciseTitleLabel.text = titleArr[indexPath.row % 3]
+            cell.exerciseTrainerLabel.text = nameArr[indexPath.row % 3]
+            cell.thumbnailView.image = UIImage(named: "\(indexPath.row+1)")
+        case "전신 다이어트 스트레칭":
+            cell.selectionStyle = .none
+            cell.exerciseTitleLabel.text = titleArr[indexPath.row % 3]
+            cell.exerciseTrainerLabel.text = nameArr[indexPath.row % 3]
+            cell.thumbnailView.image = UIImage(named: "\(indexPath.row+1)")
+        case "층간소음 없는 유산소 운동":
+            cell.selectionStyle = .none
+            cell.exerciseTitleLabel.text = titleArr[indexPath.row % 3]
+            cell.exerciseTrainerLabel.text = nameArr[indexPath.row % 3]
+            cell.thumbnailView.image = UIImage(named: "\(indexPath.row+1)")
+        default: break
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let exerciseViewController = mainStoryboard.instantiateViewController(withIdentifier: "ExerciseVC") as! ExerciseViewController
+        self.navigationController?.pushViewController(exerciseViewController, animated: true)
     }
 }

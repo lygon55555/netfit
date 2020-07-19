@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol PlayButtonDelegate {
+    func tapPlayButton(at index: IndexPath)
+}
+
 class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet var exerciseImageView: UIImageView!
     @IBOutlet var exerciseTitle1Label: UILabel!
@@ -19,6 +23,9 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet var shadowView: ShadowView!
     @IBOutlet var trainerNameLabel: UILabel!
     
+    var delegate: PlayButtonDelegate!
+    var indexPath:IndexPath!
+
     override func awakeFromNib() {
         let coverLayer = CALayer()
         coverLayer.frame = self.exerciseImageView.bounds;
@@ -27,5 +34,9 @@ class ExerciseTableViewCell: UITableViewCell {
         self.exerciseImageView.layer.addSublayer(coverLayer)
         
         shadowView.layer.cornerRadius = 13
+    }
+    
+    @IBAction func tapPlayButton(_ sender: Any) {
+        self.delegate?.tapPlayButton(at: indexPath)
     }
 }

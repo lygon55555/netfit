@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: LottieLoading {
     
     @IBOutlet var gradientView: UIView!
     @IBOutlet var topView: UIView!
@@ -21,7 +21,11 @@ class HomeViewController: UIViewController {
     @IBOutlet var ddayLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
     
-    var storyNames: [String] = ["김수연", "원다솜", "김용현"]
+    var storyNames: [String] = ["강하나", "이슬", "한지훈", "푸름샘"]
+    var storyImage: [String] = ["kanghana", "leeseul"]
+    var themeNames: [String] = ["승모근 스트레칭", "승모근과 팔뚝살 빼기", "전신 다이어트 스트레칭", "층간소음 없는 유산소 운동"]
+    var themeTrainer: [String] = ["Trainer_이슬", "Trainer_강하나", "Trainer_강하나", "Trainer_강하나"]
+    var runningTime: [Int] = [14, 37, 41, 9]
 
     override func viewDidLoad() {
         influencerCollectionView.delegate = self
@@ -52,6 +56,20 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        
+        if UserDefaults.exists(key: UserDefaultKey.boardMessage) {
+            messageLabel.text = UserDefaults.standard.string(forKey: UserDefaultKey.boardMessage)
+        }
+        else {
+            messageLabel.text = "목표 메시지를 설정해주세요"
+        }
+        
+        if UserDefaults.exists(key: UserDefaultKey.boardDday) {
+            ddayLabel.text = "D-\(UserDefaults.standard.integer(forKey: UserDefaultKey.boardDday))"
+        }
+        else {
+            ddayLabel.text = "D-day"
+        }
     }
         
     func homeViewDesign() {
@@ -86,111 +104,63 @@ class HomeViewController: UIViewController {
         settingButtonView.layer.borderColor = UIColor.init(red: 112/255, green: 112/255, blue: 112/255, alpha: 1).cgColor
         settingButtonView.layer.borderWidth = 0.5
     }
-    
-    func generateRandomColor() -> UIColor {
-        let hue : CGFloat = CGFloat(arc4random() % 256) / 256 + 0.5
-        let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5
-        let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5
-        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 0.5)
-    }
-    
-    
-    @IBAction func editBoard(_ sender: Any) {
-        
-        
-        
-    }
-    
-    
-    
-    
 }
 
 // MARK: - Influencer Collection View
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return storyNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = influencerCollectionView.dequeueReusableCell(withReuseIdentifier: "InfluencerCell", for: indexPath) as! InfluencerCollectionViewCell
         
-        cell.profileName.text = storyNames[indexPath.row % 3]
-        cell.profileImageView.image = UIImage(named: "img1")
+        cell.profileName.text = storyNames[indexPath.row]
+        cell.profileImageView.image = UIImage(named: storyImage[indexPath.row%2])
         cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.size.width / 2
-        
-        if cell.isSelected {
-            cell.profileImageView.layer.borderWidth = 2
-            cell.profileImageView.layer.borderColor = UIColor.init(red: 121/255, green: 170/255, blue: 255/255, alpha: 1).cgColor
-        }
-        else {
-            cell.profileImageView.layer.borderWidth = 0
-            cell.profileImageView.layer.borderColor = UIColor.clear.cgColor
-        }
         
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerCollectionViewCell
-//        cell.profileImageView.layer.borderWidth = 0
-//        cell.profileImageView.layer.borderColor = UIColor.clear.cgColor
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerCollectionViewCell
-//        cell.profileImageView.layer.borderWidth = 3
-//        cell.profileImageView.layer.borderColor = UIColor.init(red: 121/255, green: 170/255, blue: 255/255, alpha: 1).cgColor
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerCollectionViewCell
+        UserDefaults.standard.set(cell.profileName.text, forKey: UserDefaultKey.selectedTrainer)
+    }
 }
 
 // MARK: - Exercise Table View
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource, PlayButtonDelegate {
+    
+    func tapPlayButton(at index: IndexPath) {
+        let cell = exerciseTableView.cellForRow(at: index) as! ExerciseTableViewCell
+        UserDefaults.standard.set(cell.exerciseTitle2Label.text, forKey: UserDefaultKey.selectedTheme)
+        
+        print("index \(index.row)")
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return themeNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = exerciseTableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath) as! ExerciseTableViewCell
+        cell.delegate = self
         cell.exerciseImageView.image = UIImage(named: "img2")
         cell.exerciseImageView.layer.cornerRadius = 13
         cell.exerciseTitle1View.layer.cornerRadius = 10
         cell.selectionStyle = .none
+        cell.exerciseTitle2Label.text = themeNames[indexPath.row]
+        cell.trainerNameLabel.text = themeTrainer[indexPath.row]
+        cell.exerciseTimeLabel.text = "\(runningTime[indexPath.row]) min"
+        cell.indexPath = indexPath
         
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
-//        cell.exerciseImageView.layer.sublayers?[0].backgroundColor = UIColor.white.cgColor
-//        cell.exerciseImageView.layer.sublayers?[0].opacity = 0.54
-//
-//        let coverLayer = CALayer()
-//        coverLayer.frame = cell.exerciseTitle1View.bounds;
-//        coverLayer.backgroundColor = UIColor.white.cgColor
-//        coverLayer.opacity = 0.54
-//        cell.exerciseTitle1View.layer.addSublayer(coverLayer)
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
-//
-//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
-//        cell.exerciseImageView.layer.sublayers?[0].backgroundColor = UIColor.black.cgColor
-//        cell.exerciseImageView.layer.sublayers?[0].opacity = 0.6
-//        cell.exerciseTitle1View.layer.sublayers?[1].removeFromSuperlayer()
-//        print("1")
-//    }
-//
-//    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
-//        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
-//        cell.exerciseImageView.layer.sublayers?[0].backgroundColor = UIColor.black.cgColor
-//        cell.exerciseImageView.layer.sublayers?[0].opacity = 0.6
-//        cell.exerciseTitle1View.layer.sublayers?[1].removeFromSuperlayer()
-//        print("2")
-//        return indexPath
-//    }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
+        UserDefaults.standard.set(cell.exerciseTitle2Label.text, forKey: UserDefaultKey.selectedTheme)
+    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
@@ -211,75 +181,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//    func tableView(_ tableView: UITableView, willDisplayHeaderView view:
-//    UIView, forSection section: Int) {
-//
-//        switch section {
-//        case 0:
-//            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn, .curveEaseOut, .allowUserInteraction], animations: {() -> Void in
-//                self.exerciseTableView.backgroundColor = UIColor.cyan.withAlphaComponent(0.4)
-//
-//            })
-//
-//        case 1:
-//            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn, .curveEaseOut, .allowUserInteraction], animations: {() -> Void in
-//                self.exerciseTableView.backgroundColor = UIColor.green.withAlphaComponent(0.4)
-//
-//            })
-//
-//        case 2:
-//            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn, .curveEaseOut, .allowUserInteraction], animations: {() -> Void in
-//                self.exerciseTableView.backgroundColor = UIColor.yellow.withAlphaComponent(0.4)
-//
-//            })
-//
-//        case 3:
-//            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn, .curveEaseOut, .allowUserInteraction], animations: {() -> Void in
-//                self.exerciseTableView.backgroundColor = UIColor.orange.withAlphaComponent(0.4)
-//
-//            })
-//
-//        case 4:
-//            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn, .curveEaseOut, .allowUserInteraction], animations: {() -> Void in
-//                self.exerciseTableView.backgroundColor = UIColor.magenta.withAlphaComponent(0.4)
-//
-//            })
-//
-//        default:
-//            self.exerciseTableView.backgroundColor = UIColor.brown
-//        }
-//    }
-    
-    
-    
-    
-    
-//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//        for layer in self.view.layer.sublayers! {
-//            if layer .isKind(of: CAGradientLayer.self) {
-//                layer.removeFromSuperlayer()
-//            }
-//        }
-//        let gradient = CAGradientLayer()
-//        gradient.frame = self.view.bounds
-//        gradient.colors = [self.generateRandomColor().cgColor, self.generateRandomColor().cgColor]
-//        let anim:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
-//        anim.fromValue = 0.5
-//        anim.toValue = 1
-//        anim.duration = 1.0
-//        gradient.add(anim, forKey: "opacity")
-//        self.view.layer.addSublayer(gradient)
-//        self.view.layoutIfNeeded()
-//    }
 }
 
 
