@@ -38,6 +38,6 @@ open netfit.xcworkspace
 
 ### Demo Preview
 
-![image](https://user-images.githubusercontent.com/39911797/87877592-2f50b400-ca1a-11ea-93c9-d6823074b37d.png)
+![_2020-07-19__7 45 49](https://user-images.githubusercontent.com/39911797/87877676-98d0c280-ca1a-11ea-8f45-0987a6b8816f.png)
 
-<img width="420" alt="_2020-07-19__7 45 32" src="https://user-images.githubusercontent.com/39911797/87877601-38da1c00-ca1a-11ea-9d23-169750d380e9.png">
+![_2020-07-19__7 45 32](https://user-images.githubusercontent.com/39911797/87877687-a5551b00-ca1a-11ea-947f-47a7ea6f34ad.png)
